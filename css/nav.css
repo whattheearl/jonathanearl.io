@@ -1,0 +1,26 @@
+/* Main Nav Bar */
+nav {
+  position: fixed;
+  width: 100%;
+  color: #89A894; }
+
+.nav__container {
+  display: flex;
+  width: 75%;
+  max-width: 800px;
+  margin: 0 auto;
+  align-items: center; }
+
+.nav__logo {
+  font-family: 'Libre Barcode 39 Extended Text', monospace;
+  padding-top: .33rem;
+  font-size: 2rem; }
+
+.nav__name {
+  margin-left: 2rem; }
+
+.nav__list {
+  width: 25%;
+  display: flex;
+  margin-left: auto;
+  justify-content: space-around; }

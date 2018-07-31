@@ -1,0 +1,36 @@
+/* Page Layout */
+$primary: #4A4BFF;
+$secondary: #4FCC27;
+$tertiary: #FF9864;
+$primary-dark: #2223B2;
+$secondary-dark: #4CB22B;
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+}
+
+body {
+    background-color: #FAFAFF;
+    font-family: 'Roboto', sans-serif;
+    color: #30343F
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+ul, li {
+    list-style: none;
+}

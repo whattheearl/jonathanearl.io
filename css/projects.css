@@ -1,0 +1,28 @@
+/* Projects Section */
+.projects {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 0; }
+
+.projects__title {
+  margin: 0 auto;
+  margin-bottom: 1rem; }
+
+.project {
+  display: flex;
+  width: 75%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 2rem; }
+
+.project__icon {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.project__info {
+  width: 77%;
+  display: flex;
+  flex-direction: column; }
