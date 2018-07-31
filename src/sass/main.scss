@@ -3,3 +3,25 @@
 @import "./home_header.css";
 @import "./skills.css";
 @import "./projects.css";
+
+.contact-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-info__list {
+    display: flex;
+}
+
+.contact-info__item {
+    margin-left: 1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 800px;
+    margin: 0 auto;
+}
