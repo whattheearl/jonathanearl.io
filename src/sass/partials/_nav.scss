@@ -1,11 +1,15 @@
 /* Main Nav Bar */
-nav {
+@import "./_base.scss";
+
+.main-nav {
+    background-color: $primary;
+    z-index: 1;
     position: fixed;
     width: 100%;
-    color: #89A894;
+    color: $secondary;
 }
 
-.nav__container {
+.main-nav__container {
     display: flex;
     width: 75%;
     max-width: 800px;
@@ -13,17 +17,17 @@ nav {
     align-items: center;
 }
 
-.nav__logo {
-    font-family: 'Libre Barcode 39 Extended Text', monospace;
+.main-nav__logo {
+    font-family: "Libre Barcode 39 Extended Text", monospace;
     padding-top: .33rem;
     font-size: 2rem;
 }
 
-.nav__name {
+.main-nav__name {
     margin-left: 2rem;
 }
 
-.nav__list {
+.main-nav__list {
     width: 25%;
     display: flex;
     margin-left: auto;

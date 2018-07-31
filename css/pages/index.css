@@ -1,0 +1,150 @@
+/* Page Layout */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit; }
+
+body {
+  background-color: #F5F5F5;
+  font-family: 'Roboto', sans-serif;
+  color: #434343; }
+
+h1 {
+  font-size: 4rem; }
+
+h2 {
+  font-size: 2.5rem; }
+
+h1, h2, h3 {
+  color: #49515a;
+  font-family: 'Fira Sans', sans-serif; }
+
+ul, li {
+  list-style: none; }
+
+a {
+  color: inherit;
+  text-decoration: inherit; }
+
+/* Main Nav Bar */
+/* Page Layout */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit; }
+
+body {
+  background-color: #F5F5F5;
+  font-family: 'Roboto', sans-serif;
+  color: #434343; }
+
+h1 {
+  font-size: 4rem; }
+
+h2 {
+  font-size: 2.5rem; }
+
+h1, h2, h3 {
+  color: #49515a;
+  font-family: 'Fira Sans', sans-serif; }
+
+ul, li {
+  list-style: none; }
+
+a {
+  color: inherit;
+  text-decoration: inherit; }
+
+.main-nav {
+  background-color: #3AAA64;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  color: #49515a; }
+
+.main-nav__container {
+  display: flex;
+  width: 75%;
+  max-width: 800px;
+  margin: 0 auto;
+  align-items: center; }
+
+.main-nav__logo {
+  font-family: "Libre Barcode 39 Extended Text", monospace;
+  padding-top: .33rem;
+  font-size: 2rem; }
+
+.main-nav__name {
+  margin-left: 2rem; }
+
+.main-nav__list {
+  width: 25%;
+  display: flex;
+  margin-left: auto;
+  justify-content: space-around; }
+
+header, .skills {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #efefef;
+  padding: 4rem 0; }
+
+/* Header of HomePage */
+header {
+  border: 1px solid #efefef; }
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  max-width: 800px; }
+
+.header__title {
+  margin: 0 auto;
+  font-size: 4rem;
+  margin-bottom: 1rem; }
+
+/* Skills Section */
+header, .skills {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #efefef;
+  padding: 4rem 0; }
+
+.skills__title {
+  margin: 0 auto;
+  margin-bottom: 1rem; }
+
+.skills__container {
+  display: flex;
+  max-width: 800px;
+  width: 75%;
+  justify-content: space-evenly;
+  margin-bottom: 1rem; }
+
+.skill {
+  box-sizing: border-box;
+  border: 1px solid #efefef;
+  padding: 1rem;
+  width: 23%; }
+  .skill__item {
+    text-align: center; }
+
+.tools {
+  display: flex;
+  justify-content: center; }
+  .tools__container {
+    display: inline-flex;
+    align-self: center; }
+  .tools__list {
+    display: flex;
+    margin-left: 1rem; }
+  .tools__item {
+    margin-left: .5rem; }

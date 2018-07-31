@@ -1,8 +1,9 @@
-@import "./layout.css";
-@import "./nav.css";
-@import "./home_header.css";
-@import "./skills.css";
-@import "./projects.css";
+@import "../partials/_util.scss";
+@import "../partials/_nav.scss";
+
+.contact {
+    @extend %center-child-vertical;
+}
 
 .contact-header {
     display: flex;
@@ -24,4 +25,8 @@
     width: 75%;
     max-width: 800px;
     margin: 0 auto;
+
+    &__title {
+        margin: 0 auto;
+    }
 }
