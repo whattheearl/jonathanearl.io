@@ -1,0 +1,48 @@
+/* Main Nav Bar */
+.nav-bar {
+    background-color: $black;    
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    color: $white;
+
+    &__logo {
+        font-family: "Libre Barcode 39 Extended Text", monospace;
+        padding-top: .33rem;
+        font-size: 3rem;
+    }
+
+    &__name {
+        margin-left: 1rem;
+        font-size: 2rem;
+    }
+
+    &__container {
+        display: flex;
+        width: 95%;
+        max-width: 800px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__item {
+        padding: 1.25rem 0;
+        font-size: 3rem;
+
+        &:last-child {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__menu-button {
+        margin-left: auto;
+        color: $white;
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,58 @@
+/* Page Layout */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: $blue;
+    font-family: 'Roboto', sans-serif;
+    color: $black;
+    font-size: 1.6rem;
+}
+
+.section {
+    width: 97%;
+    margin: 0 auto 3rem auto;
+    background-color: $white;
+    padding: 2rem;
+    @extend %center-child-vertical;
+    
+    &__title {
+        margin-right: auto;
+        margin-bottom: 1rem;
+    }
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h1, h2, h3 {
+    color: $secondary;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}

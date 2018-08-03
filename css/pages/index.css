@@ -1,19 +1,43 @@
+.section, .introduction, .skills, .project {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; }
+
+.hidden {
+  display: none !important; }
+
 /* Page Layout */
 * {
   margin: 0;
   padding: 0;
   font-family: inherit; }
 
+html {
+  font-size: 10px; }
+
 body {
-  background-color: #F5F5F5;
+  background-color: #DAE3E7;
   font-family: 'Roboto', sans-serif;
-  color: #434343; }
+  color: #25292E;
+  font-size: 1.6rem; }
+
+.section {
+  width: 97%;
+  margin: 0 auto 3rem auto;
+  background-color: #F5F5F5;
+  padding: 2rem; }
+  .section__title {
+    margin-right: auto;
+    margin-bottom: 1rem; }
 
 h1 {
   font-size: 4rem; }
 
 h2 {
-  font-size: 2.5rem; }
+  font-size: 3rem; }
+
+h3 {
+  font-size: 2rem; }
 
 h1, h2, h3 {
   color: #49515a;
@@ -27,97 +51,75 @@ a {
   text-decoration: inherit; }
 
 /* Main Nav Bar */
-/* Page Layout */
-* {
-  margin: 0;
-  padding: 0;
-  font-family: inherit; }
-
-body {
-  background-color: #F5F5F5;
-  font-family: 'Roboto', sans-serif;
-  color: #434343; }
-
-h1 {
-  font-size: 4rem; }
-
-h2 {
-  font-size: 2.5rem; }
-
-h1, h2, h3 {
-  color: #49515a;
-  font-family: 'Fira Sans', sans-serif; }
-
-ul, li {
-  list-style: none; }
-
-a {
-  color: inherit;
-  text-decoration: inherit; }
-
-.main-nav {
-  background-color: #3AAA64;
+.nav-bar {
+  background-color: #25292E;
   z-index: 1;
   position: fixed;
   width: 100%;
-  color: #49515a; }
+  color: #F5F5F5; }
+  .nav-bar__logo {
+    font-family: "Libre Barcode 39 Extended Text", monospace;
+    padding-top: .33rem;
+    font-size: 3rem; }
+  .nav-bar__name {
+    margin-left: 1rem;
+    font-size: 2rem; }
+  .nav-bar__container {
+    display: flex;
+    width: 95%;
+    max-width: 800px;
+    margin: 0 auto;
+    align-items: center; }
+  .nav-bar__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .nav-bar__item {
+    padding: 1.25rem 0;
+    font-size: 3rem; }
+    .nav-bar__item:last-child {
+      margin-bottom: 1.5rem; }
+  .nav-bar__menu-button {
+    margin-left: auto;
+    color: #F5F5F5;
+    font-size: 2.5rem; }
 
-.main-nav__container {
-  display: flex;
-  width: 75%;
-  max-width: 800px;
-  margin: 0 auto;
-  align-items: center; }
-
-.main-nav__logo {
-  font-family: "Libre Barcode 39 Extended Text", monospace;
-  padding-top: .33rem;
-  font-size: 2rem; }
-
-.main-nav__name {
-  margin-left: 2rem; }
-
-.main-nav__list {
-  width: 25%;
-  display: flex;
-  margin-left: auto;
-  justify-content: space-around; }
-
-header, .skills {
+/* main-header of HomePage */
+.main-header {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  border: 1px solid #efefef;
-  padding: 4rem 0; }
-
-/* Header of HomePage */
-header {
-  border: 1px solid #efefef; }
-
-.header__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 75%;
-  max-width: 800px; }
-
-.header__title {
-  margin: 0 auto;
-  font-size: 4rem;
-  margin-bottom: 1rem; }
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+  background-color: #F5F5F5; }
+  .main-header__img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem; }
+  .main-header__container {
+    padding-top: 37px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    max-width: 800px; }
+  .main-header__title {
+    margin: 0 auto;
+    font-size: 4rem; }
+  .main-header__snippet {
+    font-size: 2rem;
+    font-weight: 100;
+    color: #778492;
+    margin-bottom: .5rem; }
+  .main-header__icon {
+    font-size: 2rem; }
+    .main-header__icon:last-child {
+      margin-left: 1rem; }
+  .main-header__list {
+    display: flex; }
 
 /* Skills Section */
-header, .skills {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #efefef;
-  padding: 4rem 0; }
-
 .skills__title {
   margin: 0 auto;
   margin-bottom: 1rem; }
@@ -148,3 +150,41 @@ header, .skills {
     margin-left: 1rem; }
   .tools__item {
     margin-left: .5rem; }
+
+/* Projects Section */
+.project {
+  background-color: #25292E; }
+  .project__container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem; }
+  .project__name {
+    color: tomato; }
+  .project__date {
+    color: #697583;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem; }
+  .project__img-container {
+    width: 100%;
+    margin-bottom: 2rem; }
+  .project__img {
+    width: 100%;
+    height: 100%;
+    max-height: 90vw;
+    object-fit: contain;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.6)); }
+  .project__column--right {
+    display: flex;
+    flex-direction: column; }
+  .project__detail {
+    margin-bottom: 1rem; }
+  .project__link-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .project__link-list > li {
+      color: #3AAA64;
+      font-size: 1.5rem;
+      padding: .5rem; }
+  .project__divider {
+    margin-bottom: 2rem; }

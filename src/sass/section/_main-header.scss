@@ -1,0 +1,53 @@
+/* main-header of HomePage */
+.main-header {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+    background-color: $white;
+
+    &__img {
+        width: 150px;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+    }
+
+    &__container {
+        padding-top: 37px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 75%;
+        max-width: 800px;
+    }
+
+    &__title {
+        margin: 0 auto;
+        font-size: 4rem;
+    }
+
+    &__snippet {
+        font-size: 2rem;
+        font-weight: 100;
+        color: $tertiary;
+        margin-bottom: .5rem;
+    }
+
+    &__icon {
+        font-size: 2rem;
+
+        &:last-child {
+            margin-left: 1rem;
+        }
+    }
+
+    
+
+    &__list {
+        display: flex;
+    }
+
+    
+}
