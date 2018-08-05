@@ -43,11 +43,17 @@
         }
     }
 
-    
-
     &__list {
         display: flex;
     }
 
-    
+    @media (min-width: 800px) {
+        &__container{
+            flex-direction: row;
+        }
+        &--right-col {
+            margin-left: 3rem;
+        }
+
+    }
 }

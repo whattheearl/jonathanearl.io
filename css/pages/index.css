@@ -118,6 +118,11 @@ a {
       margin-left: 1rem; }
   .main-header__list {
     display: flex; }
+  @media (min-width: 800px) {
+    .main-header__container {
+      flex-direction: row; }
+    .main-header--right-col {
+      margin-left: 3rem; } }
 
 /* Skills Section */
 .skills__title {
