@@ -15,14 +15,19 @@
         <div class="nav-bar__container">
             <div class="nav-bar__fixed">
                 <div class="nav-bar__logo">JE</div>
-                <div class="nav-bar__name">Jonathan Earl</div>
+                <div class="nav-bar__name">
+                    <div class="nav-bar__name--first">Jonathan</div> 
+                    <div class="nav-bar__name-container">
+                        <div class="nav-bar__name--last">Earl</div>
+                    </div> 
+                </div>
                 <button class='nav-bar__menu-button'><i class="fas fa-bars"></i></button>        
             </div>
             <nav class="nav-bar__navigation">
                 <ul class="nav-bar__list hidden">
-                    <li class="nav-bar__item"><a href="/">About</a></li>
-                    <li class="nav-bar__item"><a href="/projects.html">Projects</a></li>
-                    <li class="nav-bar__item"><a href="/contact.html">Contact</a></li>
+                    <li class="nav-bar__item"><a href="/#about">About</a></li>
+                    <li class="nav-bar__item"><a href="/#projects">Projects</a></li>
+                    <li class="nav-bar__item"><a href="/#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -54,8 +59,7 @@
             </div>
         </div>
     </header>
-
-    <section class="section">
+    <section id="about" class="section">
         <h2 class="section__title">
             Hello!
         </h2>
@@ -123,8 +127,42 @@
         </div>
     </section> -->
 
-    <section class="section">
+    <section id="projects" class="section">
         <h2 class="section__title">Projects</h2>
+        <article class="project__container">
+            <h3 class="project__name">Contact-Service</h3>
+            <div class="project__date">August 2018</div>
+            <div class="project__row">
+                <div class="project__column--left">
+                    <div class="project__img-container">
+                        <img class="project__img" src="/img/projects/kg-slim2.png" alt="picture of project">
+                    </div>
+                </div>
+                <div class="project__column--right">
+                    <div class="project__detail">
+                        Built a contact-service using Nodemailer and google cloud functions to dispatch emails
+                    </div>
+                    <div class="project__extras">
+                        It was an interesting project, the toughest part was validating that the form data was correct and present
+                    </div>
+                    <ul class="project__link-list">
+                        <li>
+                            <a href="https://metahues-kg-api.herokuapp.com/">
+                                <i class="fas fa-external-link-alt"></i> Check it out!
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/MetaHues/kg-client">
+                                <i class="fab fa-github"></i> Front-End Repo
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <hr class="project__divider">
+
         <article class="project__container">
             <h3 class="project__name">Instagram-ish</h3>
             <div class="project__date">Nov 2017 - Present</div>
@@ -211,19 +249,21 @@
     </section>
 
     <footer>
-        <div class="contact__container">
+        <div id="contact" class="contact__container">
             <h2 class="contact__title">Get in touch</h2>
+            <div class="contact__snippit">Please fill in the form below to get in touch, or just to say hello</div>
+
             <div class="contact__row">
-                <div class="contact__form">
-                    <div class="contact__snippit">Please fill in the form below to get in touch, or just to say hello</div>
+                <!-- <form class="contact__form"> -->
+                <form class="contact__form" action="https://us-central1-jonathanearlio.cloudfunctions.net/contact-service/" method="post">
                     <div class="contact__label">Name</div>
-                    <input type="text" class="contact__input" placeholder="Mr. Smith" required />
+                    <input type="text" name="name" class="contact__input contact__name" placeholder="Mr. Smith" required/>
                     <div class="contact__label">E-mail</div>
-                    <input type="email" class="contact__input" required placeholder="sample@gmail.com" />
+                    <input type="email" name="email" class="contact__input contact__email" placeholder="sample@gmail.com" required/>
                     <div class="contact__label">Message</div>
-                    <textarea class="contact__input" rows=3 placeholder="Lets chat!" required ></textarea>
-                    <button class="contact__submit-button">Submit</button>
-                </div>
+                    <textarea class="contact__input contact__msg" name="msg" rows=3 placeholder="Lets chat!" required></textarea>
+                    <button class="contact__submit-button" type="submit">Submit</button>
+                </form>
                 <div class="contact__link-container">
                     <ul class="contact__link-list">
                         <li class="contact__link-item"><i class="fas fa-envelope"></i> earl.jonathan@gmail.com</li>

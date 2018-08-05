@@ -14,6 +14,7 @@
         flex-direction: column;
         align-items: center;
     }
+
     &__img {
         width: 150px;
         border-radius: 50%;
@@ -26,11 +27,13 @@
         flex-direction: column;
         align-items: center;
         width: 75%;
-        max-width: 800px;
     }
 
     &__title {
         margin: 0 auto;
+        & > div:last-child {
+            margin-left: 15rem;
+        }
     }
 
     &__snippet {
@@ -55,22 +58,35 @@
     @media (min-width: 800px) 
     {
         padding: 9rem 0;
+
+        &__container {
+            width: 75%;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
         &__title {
             display: flex;
             flex-direction: row;
+            font-size: 6vw;
 
             & > div:last-child {
                 margin-left: 1rem;
             }
         }
 
-        &__container {
-            flex-direction: row;
+        &__snippet {
+            font-size: 3vw;
         }
 
-        &--right-col {
-            margin-left: 5rem;
+
+
+        &__img {
+            width: 33%;
         }
 
+        &__icon > a {
+            font-size: 2vw;
+        }
     }
 }

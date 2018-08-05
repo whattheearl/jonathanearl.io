@@ -5,12 +5,44 @@ navButton.onclick = e => {
     document.querySelector('.nav-bar__list').classList.toggle('hidden')
 }
 
-// let body = document.querySelector('body')
-// body.onclick = e => {
+function getValue(selector) {
+    return document.querySelector(selector).value
+}
+
+// let form = document.querySelector('.contact__form')
+// form.addEventListener('submit', function(e){
 //     e.preventDefault()
-//     console.log('click body')
-//     let nav = document.querySelector('.nav-bar__list')
-//     if(nav.classList.contains('hidden')) {
-//         nav.classList.remove('hidden')
+//     let payload = JSON.stringify({
+//         name: getValue('.contact__name'),
+//         email: getValue('.contact__email'),
+//         msg: getValue('.contact__msg')
+//     })
+//     console.log(payload)
+
+//     let formData = new FormData()
+//     formData.append('json', payload)
+    
+//     let fetchOptions = { 
+//         headers: {
+//             'Accept': 'application/json',
+//             'Content-Type': 'application/json'
+//         },
+//         method: 'POST',
+//         body: formData
 //     }
-// }
+
+//     fetch('https://us-central1-jonathanearlio.cloudfunctions.net/contact-service/', fetchOptions)
+//     .then(res => {
+//         console.log(res)
+//         res.json()
+//         .then(data => {
+//             console.log(data)
+//         })
+//         .catch(err => {
+//             console.log(err)
+//         })
+//     })
+//     .catch(err => {
+//         console.log('fetch err', err)
+//     })
+// })
