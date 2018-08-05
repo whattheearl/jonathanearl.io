@@ -1,4 +1,4 @@
-.section, .introduction, .skills, .project {
+.section, .skills, .project {
   box-sizing: border-box;
   display: flex;
   flex-direction: column; }
@@ -29,6 +29,9 @@ body {
   .section__title {
     margin-right: auto;
     margin-bottom: 1rem; }
+  @media (min-width: 800px) {
+    .section {
+      width: 75%; } }
 
 h1 {
   font-size: 4rem; }
@@ -87,12 +90,14 @@ a {
       display: flex;
       justify-content: center; }
       .nav-bar__container {
-        width: 25%;
-        margin: 0; }
+        box-sizing: border-box;
+        margin: 0;
+        width: 75%;
+        padding: 0 2rem; }
       .nav-bar__navigation {
+        margin-left: auto;
         display: flex;
-        justify-content: flex-end;
-        width: 55%; }
+        justify-content: flex-end; }
       .nav-bar__list {
         display: flex !important;
         flex-direction: row; }
@@ -142,7 +147,7 @@ a {
     .main-header__container {
       flex-direction: row; }
     .main-header--right-col {
-      margin-left: 3rem; } }
+      margin-left: 5rem; } }
 
 /* Skills Section */
 .skills__title {

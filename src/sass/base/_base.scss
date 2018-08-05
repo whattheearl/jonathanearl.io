@@ -29,6 +29,9 @@ body {
         margin-right: auto;
         margin-bottom: 1rem;
     }
+    @media(min-width: 800px) {
+        width: 75%;
+    }
 }
 
 h1 {

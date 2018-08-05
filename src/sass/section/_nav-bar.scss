@@ -50,14 +50,16 @@
         justify-content: center;
 
         &__container {
-            width: 25%;
+            box-sizing: border-box;
             margin: 0;
+            width: 75%;
+            padding: 0 2rem;
         }
 
         &__navigation {
+            margin-left: auto;
             display:flex;
             justify-content: flex-end;
-            width: 55%;
         }
 
         &__list {
