@@ -56,4 +56,24 @@
     &__divider {
         margin-bottom: 2rem;
     }
+
+    @media (min-width: 800px) {
+        &__row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        &__column--left {
+            width: 20vw;
+        }
+        
+        &__img {
+            max-height: 20vw;
+        }
+
+        &__column--right {
+            width: calc(100% - 27vw);
+            margin-left: 3vw;
+        }
+    }
 }

@@ -48,10 +48,12 @@
     }
 
     @media (min-width: 800px) {
+        padding: 9rem 0;
 
-        &__container{
+        &__container {
             flex-direction: row;
         }
+
         &--right-col {
             margin-left: 5rem;
         }

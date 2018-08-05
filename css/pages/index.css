@@ -144,10 +144,12 @@ a {
   .main-header__list {
     display: flex; }
   @media (min-width: 800px) {
-    .main-header__container {
-      flex-direction: row; }
-    .main-header--right-col {
-      margin-left: 5rem; } }
+    .main-header {
+      padding: 9rem 0; }
+      .main-header__container {
+        flex-direction: row; }
+      .main-header--right-col {
+        margin-left: 5rem; } }
 
 /* Skills Section */
 .skills__title {
@@ -218,3 +220,14 @@ a {
       padding: .5rem; }
   .project__divider {
     margin-bottom: 2rem; }
+  @media (min-width: 800px) {
+    .project__row {
+      display: flex;
+      flex-direction: row; }
+    .project__column--left {
+      width: 20vw; }
+    .project__img {
+      max-height: 20vw; }
+    .project__column--right {
+      width: calc(100% - 27vw);
+      margin-left: 3vw; } }
