@@ -20,7 +20,6 @@
     &__container {
         display: flex;
         width: 95%;
-        max-width: 800px;
         margin: 0 auto;
         align-items: center;
     }
@@ -44,5 +43,38 @@
         margin-left: auto;
         color: $white;
         font-size: 2.5rem;
+    }
+
+    @media(min-width: 800px) {
+        display: flex;
+        justify-content: center;
+
+        &__container {
+            width: 25%;
+            margin: 0;
+        }
+
+        &__navigation {
+            display:flex;
+            justify-content: flex-end;
+            width: 55%;
+        }
+
+        &__list {
+            display: flex !important;
+            flex-direction: row;
+        }
+
+        &__menu-button {
+            display: none;
+        }
+
+        &__item {
+            font-size: 2rem;
+            margin-left: 2rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 }
