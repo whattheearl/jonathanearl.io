@@ -17,11 +17,15 @@
         font-size: 2rem;
     }
 
+    &__fixed {
+        display:flex;
+        align-items: center;
+    }
+
     &__container {
         display: flex;
+        flex-direction: column;
         width: 95%;
-        margin: 0 auto;
-        align-items: center;
     }
 
     &__list {
@@ -50,16 +54,21 @@
         justify-content: center;
 
         &__container {
+            display: flex;
+            flex-direction: row;
             box-sizing: border-box;
-            margin: 0;
             width: 75%;
             padding: 0 2rem;
         }
 
+        &__fixed {
+            display: flex;
+            flex-direction: row;
+        }
+
         &__navigation {
+            display: flex;
             margin-left: auto;
-            display:flex;
-            justify-content: flex-end;
         }
 
         &__list {

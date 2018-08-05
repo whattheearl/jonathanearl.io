@@ -19,13 +19,14 @@ body {
   background-color: #DAE3E7;
   font-family: 'Roboto', sans-serif;
   color: #25292E;
-  font-size: 1.6rem; }
+  font-size: 2rem; }
 
 .section {
+  box-sizing: border-box;
   width: 97%;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 4rem auto;
   background-color: #F5F5F5;
-  padding: 2rem; }
+  padding: 4rem 2rem; }
   .section__title {
     margin-right: auto;
     margin-bottom: 1rem; }
@@ -34,13 +35,13 @@ body {
       width: 75%; } }
 
 h1 {
-  font-size: 4rem; }
+  font-size: 5rem; }
 
 h2 {
-  font-size: 3rem; }
+  font-size: 4rem; }
 
 h3 {
-  font-size: 2rem; }
+  font-size: 3rem; }
 
 h1, h2, h3 {
   color: #49515a;
@@ -50,8 +51,13 @@ ul, li {
   list-style: none; }
 
 a {
+  font-size: 2rem;
   color: inherit;
   text-decoration: inherit; }
+
+button {
+  border: none;
+  background-color: inherit; }
 
 /* Main Nav Bar */
 .nav-bar {
@@ -67,11 +73,13 @@ a {
   .nav-bar__name {
     margin-left: 1rem;
     font-size: 2rem; }
+  .nav-bar__fixed {
+    display: flex;
+    align-items: center; }
   .nav-bar__container {
     display: flex;
-    width: 95%;
-    margin: 0 auto;
-    align-items: center; }
+    flex-direction: column;
+    width: 95%; }
   .nav-bar__list {
     display: flex;
     flex-direction: column;
@@ -90,14 +98,17 @@ a {
       display: flex;
       justify-content: center; }
       .nav-bar__container {
+        display: flex;
+        flex-direction: row;
         box-sizing: border-box;
-        margin: 0;
         width: 75%;
         padding: 0 2rem; }
-      .nav-bar__navigation {
-        margin-left: auto;
+      .nav-bar__fixed {
         display: flex;
-        justify-content: flex-end; }
+        flex-direction: row; }
+      .nav-bar__navigation {
+        display: flex;
+        margin-left: auto; }
       .nav-bar__list {
         display: flex !important;
         flex-direction: row; }
@@ -118,6 +129,10 @@ a {
   padding: 3rem 0;
   margin-bottom: 3rem;
   background-color: #F5F5F5; }
+  .main-header--right-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
   .main-header__img {
     width: 150px;
     border-radius: 50%;
@@ -130,8 +145,7 @@ a {
     width: 75%;
     max-width: 800px; }
   .main-header__title {
-    margin: 0 auto;
-    font-size: 4rem; }
+    margin: 0 auto; }
   .main-header__snippet {
     font-size: 2rem;
     font-weight: 100;
@@ -146,6 +160,11 @@ a {
   @media (min-width: 800px) {
     .main-header {
       padding: 9rem 0; }
+      .main-header__title {
+        display: flex;
+        flex-direction: row; }
+        .main-header__title > div:last-child {
+          margin-left: 1rem; }
       .main-header__container {
         flex-direction: row; }
       .main-header--right-col {
@@ -193,8 +212,8 @@ a {
   .project__name {
     color: tomato; }
   .project__date {
-    color: #697583;
-    font-size: 1.25rem;
+    color: #a0a8b2;
+    font-size: 1.66rem;
     margin-bottom: 1.5rem; }
   .project__img-container {
     width: 100%;
@@ -210,6 +229,8 @@ a {
     flex-direction: column; }
   .project__detail {
     margin-bottom: 1rem; }
+  .project__extras {
+    display: none; }
   .project__link-list {
     display: flex;
     flex-direction: column;
@@ -230,4 +251,49 @@ a {
       max-height: 20vw; }
     .project__column--right {
       width: calc(100% - 27vw);
-      margin-left: 3vw; } }
+      margin-left: 3vw; }
+    .project__extras {
+      display: block; } }
+
+footer {
+  background-color: #25292E;
+  color: #F5F5F5;
+  padding: 6rem 0; }
+
+.contact {
+  color: #767676; }
+  .contact__container {
+    box-sizing: border-box;
+    width: 97%;
+    padding: 0 2rem; }
+  .contact__title {
+    color: tomato; }
+  .contact__snippit {
+    color: #767676;
+    margin-bottom: 1rem; }
+  .contact__form {
+    display: flex;
+    flex-direction: column; }
+  .contact__input {
+    width: auto;
+    font-size: 2rem;
+    margin-bottom: 1rem; }
+  .contact__label {
+    color: #767676; }
+  .contact__submit-button {
+    color: #F5F5F5;
+    font-size: 2rem;
+    padding: 1rem;
+    display: inline-box;
+    margin: 2rem 0 2rem auto;
+    width: 25%; }
+  .contact__link-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .contact__link-list > li {
+      font-weight: 500;
+      font-size: 2rem;
+      padding: .5rem; }
+      .contact__link-list > li > i {
+        margin-right: 1.5rem; }

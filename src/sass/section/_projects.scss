@@ -14,8 +14,8 @@
     }
 
     &__date {
-        color: lighten($black, 30%);
-        font-size: 1.25rem;
+        color: lighten($black, 50%);
+        font-size: 1.66rem;
         margin-bottom: 1.5rem;
     }
 
@@ -39,6 +39,10 @@
 
     &__detail {
         margin-bottom: 1rem;
+    }
+
+    &__extras {
+        display: none;
     }
 
     &__link-list {
@@ -74,6 +78,10 @@
         &__column--right {
             width: calc(100% - 27vw);
             margin-left: 3vw;
+        }
+
+        &__extras {
+            display: block;
         }
     }
 }
