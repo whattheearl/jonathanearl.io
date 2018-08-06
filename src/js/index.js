@@ -1,13 +1,19 @@
 // Show hide mobile nav
+const queryString = require('query-string');
+
 let navButton = document.querySelector('.nav-bar__menu-button')
 navButton.onclick = e => {
     e.preventDefault()
     document.querySelector('.nav-bar__list').classList.toggle('hidden')
 }
 
-function getValue(selector) {
-    return document.querySelector(selector).value
-}
+const parsed = queryString.parse(window.location.search)
+console.log(parsed)
+
+
+// function getValue(selector) {
+//     return document.querySelector(selector).value
+// }
 
 // let form = document.querySelector('.contact__form')
 // form.addEventListener('submit', function(e){

@@ -1,7 +1,14 @@
 {
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.6",
+    "browserify": "^16.2.2",
     "gulp": "^3.9.1",
     "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {
+    "gulp-babel": "^7.0.1",
+    "query-string": "^6.1.0"
   }
 }

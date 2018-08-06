@@ -324,6 +324,11 @@ footer {
     .contact__row {
       display: flex;
       flex-direction: row; }
+    .contact__form {
+      display: flex;
+      flex-grow: 1; }
+    .contact__input {
+      width: 100%; }
     .contact__link-container {
       display: flex;
       justify-content: center; }

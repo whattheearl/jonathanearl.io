@@ -73,6 +73,15 @@ footer {
             flex-direction: row;
         }
 
+        &__form {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        &__input {
+            width: 100%;
+        }
+
         &__link-container {
             display: flex;
             justify-content: center;
