@@ -3,12 +3,14 @@
     "query-string": "^6.1.0"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "yarn clean && webpack",
+    "clean": "rimraf build",
     "dev": "webpack-dev-server"
   },
   "devDependencies": {
     "css-loader": "^1.0.0",
     "node-sass": "^4.9.2",
+    "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.16.5",
