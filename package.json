@@ -3,11 +3,11 @@
     "query-string": "^6.1.0"
   },
   "scripts": {
-    "build": "yarn clean && webpack",
-    "clean": "rimraf build",
+    "build": "webpack",
     "dev": "webpack-dev-server"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "node-sass": "^4.9.2",
     "rimraf": "^2.6.2",

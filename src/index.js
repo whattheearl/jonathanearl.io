@@ -9,10 +9,7 @@ navButton.onclick = e => {
 }
 
 const parsed = queryString.parse(window.location.search)
-
 let notification = document.querySelector('.contact__notification')
-console.log('notification', notification)
-if(parsed.success) console.log('success')
 switch(parsed.success) {
     case undefined: 
         break;
@@ -23,5 +20,3 @@ switch(parsed.success) {
         notification.innerHTML = 'Error, please try again in a little bit';
         break;
 }
-
-console.log('oh man friday the 13th')
