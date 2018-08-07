@@ -1,6 +1,7 @@
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     entry: './src/index.js',
@@ -10,6 +11,7 @@ module.exports = {
     },
     module: {
         rules: [
+            // sass loader
             {
                 test: /\.scss$/,
                 use: [
@@ -17,11 +19,24 @@ module.exports = {
                     "css-loader", // translates CSS into CommonJS
                     "sass-loader" // compiles Sass to CSS, using Node Sass by default
                 ]
+            },
+            // copy images
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                        name: '/img/[name].[ext]',
+                    }
+                  }
+                ]
             }
         ]
     },
     plugins: [
         new CleanWebpackPlugin(['build']),
-        new HtmlWebpackPlugin({template:'index.html'})
+        new HtmlWebpackPlugin({template:'index.html'}),
+        new CopyWebpackPlugin([{from: 'img', to: 'img'}])
     ]
 }
