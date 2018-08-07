@@ -11,16 +11,23 @@
     {
         padding: 9rem 0;
     }
-
-
-
+    
     &__img {
         width: 150px;
         border-radius: 50%;
         margin-bottom: 1rem;
-        width: 75%;
+        max-width: 75%;
+        max-height: 65vh;
+        width: auto;
+        height: auto;
         @media(min-width: $medium-size) {
-            width: 50%;
+            max-width: 50vw;
+            max-height: 50vh;
+
+        }
+        @media(min-width: $large-size) {
+            max-height: 50vh;
+            max-width: 33vw;
         }
     }
 
