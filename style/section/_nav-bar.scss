@@ -20,10 +20,11 @@
             position: relative;
         }
         &--last {
-            color: $white;
-            position: absolute;
-            top: .5em;
-            left: 1rem;
+        //     color: $white;
+        //     position: absolute;
+        //     top: .5em;
+            // left: 1rem;
+            margin-left: 1rem;
         }
     }
 
@@ -58,6 +59,12 @@
         margin-left: auto;
         color: $white;
         font-size: 2.5rem;
+    }
+
+    &__notification {
+        background-color: tomato;
+        font: $black;
+        text-align: center;
     }
 
     @media(min-width: 800px) {

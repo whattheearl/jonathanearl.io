@@ -31,9 +31,9 @@
 
     &__title {
         margin: 0 auto;
-        & > div:last-child {
-            margin-left: 15rem;
-        }
+        // & > div:last-child {
+        //     margin: 15rem;
+        // }
     }
 
     &__snippet {

@@ -36,7 +36,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['build']),
-        new HtmlWebpackPlugin({template:'index.html'}),
+        new HtmlWebpackPlugin({template: path.resolve(__dirname, 'index.html')}),
         new CopyWebpackPlugin([{from: 'img', to: 'img'}])
     ]
 }

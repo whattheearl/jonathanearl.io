@@ -4,7 +4,7 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "serve": "webpack-dev-server --open --mode development --hot"
+    "serve": "webpack-dev-server --inline --open --mode development --hot"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
