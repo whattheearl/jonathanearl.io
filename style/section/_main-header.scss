@@ -7,18 +7,21 @@
     padding: 3rem 0;
     margin-bottom: 3rem;
     background-color: $white;
-    
-    &--right-col
+    @media (min-width: $large-size) 
     {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        padding: 9rem 0;
     }
+
+
 
     &__img {
         width: 150px;
         border-radius: 50%;
         margin-bottom: 1rem;
+        width: 75%;
+        @media(min-width: $medium-size) {
+            width: 50%;
+        }
     }
 
     &__container {
@@ -27,13 +30,37 @@
         flex-direction: column;
         align-items: center;
         width: 75%;
+
+        @media (min-width: $large-size) {
+            width: 90%;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    }
+
+    &--right-col
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__title {
         margin: 0 auto;
-        // & > div:last-child {
-        //     margin: 15rem;
-        // }
+
+        @media (min-width: $medium-size) {
+            display: flex;
+            flex-direction: row;
+            font-size: 7rem;
+            
+            & > div:last-child {
+                margin-left: 1rem;
+            }
+        }
+
+        @media (min-width: $large-size) {
+            font-size: 6vw;            
+        }
     }
 
     &__snippet {
@@ -41,6 +68,10 @@
         font-weight: 100;
         color: $tertiary;
         margin-bottom: .5rem;
+
+        @media (min-width: $large-size) {
+            font-size: 3vw;
+        }
     }
 
     &__icon {
@@ -49,44 +80,14 @@
         &:last-child {
             margin-left: 1rem;
         }
+        @media (min-width: $large-size) {
+            & > a {
+                font-size: 2vw;
+            }
+        }
     }
 
     &__list {
         display: flex;
-    }
-
-    @media (min-width: 800px) 
-    {
-        padding: 9rem 0;
-
-        &__container {
-            width: 75%;
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
-
-        &__title {
-            display: flex;
-            flex-direction: row;
-            font-size: 6vw;
-
-            & > div:last-child {
-                margin-left: 1rem;
-            }
-        }
-
-        &__snippet {
-            font-size: 3vw;
-        }
-
-
-
-        &__img {
-            width: 33%;
-        }
-
-        &__icon > a {
-            font-size: 2vw;
-        }
     }
 }
