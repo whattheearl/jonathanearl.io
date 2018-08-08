@@ -83,9 +83,10 @@
 
     &__icon {
         font-size: 2rem;
+        margin-left: 1rem;
 
-        &:last-child {
-            margin-left: 1rem;
+        &:first-child {
+            margin-left: 0;
         }
         @media (min-width: $large-size) {
             & > a {
