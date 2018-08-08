@@ -1,6 +1,9 @@
+// HTML
+import './index.html'
+
 // Styles
-import '../style/index.scss'
+import './style/index.scss'
 
 // Components
-import './components/nav-button'
-import './components/contact-notification'
+import './js/components/nav-button'
+import './js/components/contact-notification'

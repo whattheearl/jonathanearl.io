@@ -7,9 +7,10 @@
     color: $white;
 
     &__logo {
-        font-family: "Libre Barcode 39 Extended Text", monospace;
-        padding-top: .33rem;
-        font-size: 3rem;
+        & > a {
+            font-family: "lobster", monospace;
+            font-size: 3rem;
+        }
     }
 
     &__name {
