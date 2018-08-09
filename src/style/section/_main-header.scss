@@ -54,11 +54,13 @@
 
     &__title {
         margin: 0 auto;
+        
+        font-size: 15vw;
 
         @media (min-width: $medium-size) {
             display: flex;
             flex-direction: row;
-            font-size: 7rem;
+            font-size: 8vw;
             
             & > div:last-child {
                 margin-left: 1rem;
@@ -66,36 +68,73 @@
         }
 
         @media (min-width: $large-size) {
-            font-size: 6vw;            
+            font-size: 8vw;            
         }
     }
 
     &__snippet {
-        font-size: 2rem;
+        font-size: 5vw;
         font-weight: 100;
         color: $tertiary;
         margin-bottom: .5rem;
+
+        font-size: 6vw;
+
+        @media(min-width: $medium-size) {
+            font-size: 3vw;
+        }
 
         @media (min-width: $large-size) {
             font-size: 3vw;
         }
     }
 
+    &__list {
+        display: flex;
+        justify-content: space-around;
+
+        width: 50vw;
+
+        @media(min-width: $medium-size) {
+            width: 70vw;
+        }
+
+        @media (min-width: $large-size) {
+            width: 30vw;
+        }
+    }
+
     &__icon {
-        font-size: 2rem;
         margin-left: 1rem;
+        color: tomato;
 
         &:first-child {
             margin-left: 0;
         }
-        @media (min-width: $large-size) {
-            & > a {
-                font-size: 2vw;
+
+        & > a {
+            display: flex;
+            align-items: center;
+
+            font-size: 10vw;
+
+            @media(min-width: $medium-size) {
+                font-size: 4vw;
+            }
+
+            @media (min-width: $large-size) {
+                font-size: 3vw;
             }
         }
     }
 
-    &__list {
-        display: flex;
+    &__icon-text {
+        margin-left: 1rem;
+        display: none;
+        @media(min-width: $medium-size) {
+            display: inline;
+        }
     }
+
+    
 }
