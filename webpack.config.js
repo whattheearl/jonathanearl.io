@@ -5,7 +5,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const devMode = process.env.NODE_ENV !== 'production'
+const devMode = process.env.NODE_ENV === 'production'
+console.log(devMode, process.env.NODE_ENV)
 
 module.exports = {
     module: {
@@ -14,7 +15,7 @@ module.exports = {
                 test: /\.scss$/,
                 use: [
                     // "style-loader", // creates style nodes from JS strings
-                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    devMode ? MiniCssExtractPlugin.loader : "style-loader",
                     'css-loader', // translates CSS into CommonJS
                     'sass-loader' // compiles Sass to CSS, using Node Sass by default
                 ]            
