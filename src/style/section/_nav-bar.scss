@@ -1,14 +1,19 @@
 /* Main Nav Bar */
 .nav-bar {
+    display: flex;
+    flex-direction: column;
     background-color: $black;    
     z-index: 1;
     position: fixed;
     width: 100%;
     color: $white;
+    font-size: 3rem;
+    border-bottom: 1px solid $white;
 
     &__logo {
+        padding-top: 1rem;
         & > a {
-            font-family: "lobster", monospace;
+            font-family: $logo-font;
             font-size: 3rem;
         }
     }
@@ -48,11 +53,15 @@
     }
 
     &__item {
-        padding: 1.25rem 0;
-        font-size: 3rem;
+        margin: 1.25rem;
+
+        & > a {
+            height: 100%;
+            width: 100%;
+        }
 
         &:last-child {
-            margin-bottom: 1.5rem;
+            margin-bottom: 3rem;
         }
     }
 
@@ -60,17 +69,17 @@
         margin-left: auto;
         color: $white;
         font-size: 2.5rem;
+        font-family: $heading-font;
     }
 
     &__notification {
         background-color: tomato;
         font: $black;
         text-align: center;
+        display: none;
     }
 
     @media(min-width: 900px) {
-        display: flex;
-        justify-content: center;
 
         &__container {
             display: flex;
@@ -103,7 +112,7 @@
             font-size: 2rem;
             margin-left: 2rem;
             &:last-child {
-                margin-bottom: 0;
+                margin-bottom: 1.25rem;
             }
         }
     }

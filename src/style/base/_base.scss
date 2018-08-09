@@ -13,7 +13,7 @@ html {
 
 body {
     background-color: $blue;
-    font-family: 'Roboto', sans-serif;
+    font-family: $main-font;
     color: $black;
     font-size: 2rem;
 }
@@ -49,7 +49,7 @@ h3 {
 
 h1, h2, h3 {
     color: $secondary;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: $heading-font;
 }
 
 ul, li {
