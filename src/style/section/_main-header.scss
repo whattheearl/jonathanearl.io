@@ -105,8 +105,8 @@
     }
 
     &__icon {
-        margin-left: 1rem;
-        color: tomato;
+        margin-left: 2.5rem;
+        color: black;
 
         &:first-child {
             margin-left: 0;
@@ -123,7 +123,7 @@
             }
 
             @media (min-width: $large-size) {
-                font-size: 3vw;
+                font-size: 2.5vw;
             }
         }
     }
@@ -134,7 +134,5 @@
         @media(min-width: $medium-size) {
             display: inline;
         }
-    }
-
-    
+    }    
 }

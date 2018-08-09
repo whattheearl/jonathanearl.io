@@ -1,6 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
+const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
     module: {
@@ -8,9 +13,10 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    "style-loader", // creates style nodes from JS strings
-                    "css-loader", // translates CSS into CommonJS
-                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                    // "style-loader", // creates style nodes from JS strings
+                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    'css-loader', // translates CSS into CommonJS
+                    'sass-loader' // compiles Sass to CSS, using Node Sass by default
                 ]            
             },
             {
@@ -25,25 +31,28 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                use: { loader: 'html-loader'}
-            },
-            {
-                test: /\.(png|jpg|gif)$/,
-                use: [
-                  {
-                    loader: 'file-loader',
-                    options: {    
-                        name: 'assets/[name].[ext]'
-                    }  
-                  }
-                ]
-              }
+                use: {
+                    loader: 'raw-loader',
+                }
+            }
         
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({template: './src/index.html'}),
         new CleanWebpackPlugin('dist'),
-        new CopyWebpackPlugin([{to: 'assets/icon', from: 'src/assets/icon'}])
-    ]
+        new CopyWebpackPlugin([{to: 'assets', from: 'src/assets'}]),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: '[name].css',
+            chunkFilename: '[id].css'
+          })
+    ],
+    optimization: {
+        minimizer: [
+            new OptimizeCSSAssetsPlugin({}),
+            new UglifyJsPlugin()
+        ]
+    }
 }
