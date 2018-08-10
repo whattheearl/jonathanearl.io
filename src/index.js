@@ -1,10 +1,11 @@
 
+import axios from 'axios'
 // Styles
 import './style/index.scss'
 
 // Components
-import './js/components/nav-button'
-import './js/components/contact-notification'
+import './js/nav-button'
+import './js/contact-notification'
 
 // HTML
 if(process.env.NODE_ENV != 'production') {

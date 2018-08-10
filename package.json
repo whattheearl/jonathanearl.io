@@ -4,9 +4,11 @@
   },
   "scripts": {
     "build": "NODE_ENV=production webpack --optimize-minimize",
-    "serve": "webpack-dev-server --hot --mode development --open"
+    "serve": "webpack-dev-server --hot --mode development --open",
+    "deploy": "yarn build && aws s3 sync ./dist s3://jonathanearl.io"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
