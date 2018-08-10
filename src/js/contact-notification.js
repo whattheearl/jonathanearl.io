@@ -1,26 +1,42 @@
-import queryString from 'query-string'
 import axios from 'axios'
 
-// const parsed = queryString.parse(window.location.search)
-let notification = document.querySelector('.nav-bar__notification')
-let submitButton = document.querySelector('.contact__submit-button')
+let getInputValue = selector => {
+    return document.querySelector(selector).value
+}
 
-submitButton.onclick = (e) => {
+let form = document.querySelector('form')
+form.addEventListener('submit', (e) => {
     e.preventDefault()
-    axios.post("https://us-central1-jonathanearlio.cloudfunctions.net/contact-service/", {msg:'hello', email:'earl.jonathan@gmail.com', name:'fred durst'})
+    let notification = document.querySelector('.nav-bar__notification')
+
+    let formData = {
+        name: getInputValue('.contact__name'),
+        email: getInputValue('.contact__email'),
+        msg: getInputValue('.contact__msg')
+    }
+
+    axios.post("https://us-central1-jonathanearlio.cloudfunctions.net/contact-service/", formData)
     .then(res => {
-        console.log('res', res)
+        notification.innerHTML = res.data.msg
+        notification.style.display = 'flex'
     })
     .catch(err => {
-        console.log('err', err)
+        let msg = ''
+        if(err.data.msg !== undefined) {
+            msg = err.data.msg
+        } else { 
+            msg = 'Something went wrong! Please try again later...'
+        }
+        notification.innerHTML = msg
+        notification.style.display = 'flex'
     })
-}
+})
+
 // switch(parsed.success) {
 //     case undefined: 
 //         notification.innerHTML = null;
 //         break;
 //     case 'true': 
-//         notification.innerHTML = 'Talk to you soon!'
 //         notification.style.display = 'block'
 //         break;
 //     case 'false':
@@ -28,7 +44,7 @@ submitButton.onclick = (e) => {
 //         notification.style.display = 'block'
 //         break;
 // }
-
+let notification = document.querySelector('.nav-bar__notification')
 notification.onclick = (e) => {
     e.preventDefault()
 

@@ -11,10 +11,11 @@
     border-bottom: 1px solid $white;
 
     &__logo {
+        margin: -1.25rem 0;
         padding-top: 1rem;
         & > a {
             font-family: $logo-font;
-            font-size: 3rem;
+            font-size: 5rem;
         }
     }
 
