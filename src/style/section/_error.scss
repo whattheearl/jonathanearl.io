@@ -1,0 +1,12 @@
+.error {
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10rem;
+        background-color: tomato;
+        color: $black;
+        height: 100vh;
+        font-family: $main-font;
+    }
+}

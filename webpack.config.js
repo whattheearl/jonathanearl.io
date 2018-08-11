@@ -58,8 +58,29 @@ module.exports = {
                 useShortDoctype                : true
             }
         }),
+        new HtmlWebpackPlugin({
+            template: './src/error.html',
+            filename: 'error.html',
+            minify: {
+                html5                          : true,
+                collapseWhitespace             : true,
+                minifyCSS                      : true,
+                minifyJS                       : true,
+                minifyURLs                     : false,
+                removeAttributeQuotes          : true,
+                removeComments                 : true,
+                removeEmptyAttributes          : true,
+                removeOptionalTags             : true,
+                removeRedundantAttributes      : true,
+                removeScriptTypeAttributes     : true,
+                removeStyleLinkTypeAttributese : true,
+                useShortDoctype                : true
+            }
+        }),
         new CleanWebpackPlugin('dist'),
-        new CopyWebpackPlugin([{to: 'assets', from: 'src/assets'}]),
+        new CopyWebpackPlugin([
+            {from: 'src/assets', to:  'assets'}
+        ]),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
