@@ -4,6 +4,10 @@ let getInputValue = selector => {
     return document.querySelector(selector).value
 }
 
+let clearInputValue = (selector) => {
+    document.querySelector(selector).value = ""
+}
+
 let form = document.querySelector('form')
 form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -19,6 +23,9 @@ form.addEventListener('submit', (e) => {
     .then(res => {
         notification.innerHTML = res.data.msg
         notification.style.display = 'flex'
+        clearInputValue('.contact__name')
+        clearInputValue('.contact__email')
+        clearInputValue('.contact__msg')
     })
     .catch(err => {
         let msg = ''

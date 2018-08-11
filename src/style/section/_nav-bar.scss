@@ -74,10 +74,10 @@
     }
 
     &__notification {
+        display: none;
         background-color: tomato;
         font: $black;
-        text-align: center;
-        display: none;
+        justify-content: center;
     }
 
     @media(min-width: 900px) {
