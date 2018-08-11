@@ -1,0 +1,59 @@
+// add education and skills section
+<section class="skills">
+    <h2 class="skills__title">Skills</h2>
+    <div class="skills__container">
+        <div class="skill">
+            <div class="skill__title">Front-End Engineer</div>
+            <div class="skill__label">Languages</div>
+            <ul class="skill__language-list">
+                <li class="skill__item">HTML</li>
+                <li class="skill__item">CSS</li>
+                <li class="skill__item">JavaScript JS</li>
+            </ul>
+            <div class="skill__label">Specialties</div>
+            <ul class="skill__specialty-list">
+                <li class="skill__item">React</li>
+                <li class="skill__item">BootStrap</li>
+            </ul>
+        </div>
+        <div class="skill">
+            <div class="skill__title">Back-End Engineer</div>
+            <div class="skill__label">Language</div>
+            <ul class="skill__language-list">
+                <li class="skill__item">JavaScript JS</li>
+            </ul>
+            <ul class="skill__framework-list">
+                <li class="skill__item">Express</li>
+            </ul>
+            <div class="skill__label">Specialties</div>
+            <ul class="skill__specialty-list">
+                <li class="skill__item">API Architecture</li>
+                <li class="skill__item">Authentication</li>
+                <li class="skill__item">NoSQL</li>
+            </ul>
+        </div>
+
+        <div class="skill">
+            <div class="skill__title">Scripting</div>
+            <div class="skill__label">Languages</div>
+            <ul class="skill__language-list">
+                <li class="skill__item">JavaScript JS</li>
+                <li class="skill__item">Powershell PS</li>
+            </ul>
+            <div class="skill__label">Specialties</div>
+            <ul class="skill__specialty-list">
+                <li class="skill__item">SharePoint Online</li>
+                <li class="skill__item">Windows10</li>
+            </ul>
+        </div>
+    </div>
+    <div class="tools__container">
+        <div class="tools__label">Tools</div>
+        <ul class="tools__list">
+            <li class="tools__item">Git</li>
+            <li class="tools__item">NPM</li>
+            <li class="tools__item">Sass</li>
+            <li class="tools__item">Gulp</li>
+        </ul>
+    </div>
+</section>
