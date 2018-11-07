@@ -32,7 +32,7 @@ I set up webpack dev server with hot reload for faster development. This allowed
 
 Run development server locally
 ```
-    yarn serve
+yarn serve
 ```
 
 ### Build
@@ -40,13 +40,13 @@ I set up webpack to minify the CSS / HTML / JS reducing file size allowing for q
 
 Build project and output to /dist
 ```
-    yarn build
+yarn build
 ```
 
 ### Publish
 I decided to use AWS S3 for static hosting as it is a cost effective solution with easy to set up CDN to reduce distance to end user. This read me does not cover setting up CloudFront and AWS CLI is required to use the following package.json script. The deploy script really to automate the upload to s3 process
 
-To publish to s3 you will need to: [Amazon Walkthrough: steps 1-4](https://docs.aws.amazon.com/AmazonS3/latest/dev/hosting-websites-on-s3-examples.html)
+To publish to s3 you will need to: [Amazon Walkthrough: steps 1-4](https://docs.aws.amazon.com/AmazonS3/latest/dev/hosting-websites-on-s3-examples.html)(11/2018)
 1. Sign up for Amazon AWS account 
 2. Create an S3 bucket
 3. Make the bucket publicly accessible
