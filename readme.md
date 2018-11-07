@@ -9,10 +9,10 @@
 
 ## Requirements
 Links checked 11/2018
-*[Git](https://git-scm.com/downloads) & [Yarn](https://yarnpkg.com/lang/en/docs/install/)
-*[NPM](https://www.npmjs.com/get-npm) (Yarn)
-*[AWS CLI](https://aws.amazon.com/cli/)
-*OSX (not tested in windows)
+* [Git](https://git-scm.com/downloads) & [Yarn](https://yarnpkg.com/lang/en/docs/install/)
+* [NPM](https://www.npmjs.com/get-npm) (Yarn)
+* [AWS CLI](https://aws.amazon.com/cli/)
+* OSX (not tested in windows)
 
 ## Installation
 Clone (Git)
