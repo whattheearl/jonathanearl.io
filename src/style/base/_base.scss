@@ -1,6 +1,4 @@
-/* Page Layout */
-
-
+/* Shared Page Layout */
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +16,7 @@ body {
     font-size: 2rem;
 }
 
+// Container for each section of the site
 .section {
     box-sizing: border-box;
     width: 97%;
