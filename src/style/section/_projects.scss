@@ -76,12 +76,12 @@
         
     @media (min-width: $large_size) {
         &__column--left {
-            width: 20vw;
+            width: 45%;
         }
 
         &__column--right {
-            width: calc(100% - 27vw);
-            margin-left: 3vw;
+            width: 48%;
+            margin-left: 7%;
         }
 
         &__extras {
