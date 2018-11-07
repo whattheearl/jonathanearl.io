@@ -43,8 +43,10 @@ Build project and output to /dist
 yarn build
 ```
 
-### Publish
-I decided to use AWS S3 for static hosting as it is a cost effective solution with easy to set up CDN to reduce distance to end user. This read me does not cover setting up CloudFront and AWS CLI is required to use the following package.json script. The deploy script really to automate the upload to s3 process
+### Deployment
+I decided to use AWS S3 for static hosting as it is a cost effective solution with easy to set up CDN to reduce distance to end user. Files are built using webpack uploaded to S3 where they are automatically replicated by CloudFront CDN and made available publicly.
+
+This read me does not cover setting up CloudFront and AWS CLI is required to use the following package.json script. The deploy script automates the upload to s3 process.
 
 To publish to s3 you will need to: [Amazon Walkthrough: steps 1-4](https://docs.aws.amazon.com/AmazonS3/latest/dev/hosting-websites-on-s3-examples.html)(11/2018)
 1. Sign up for Amazon AWS account 
@@ -63,4 +65,23 @@ To publish to s3 you will need to: [Amazon Walkthrough: steps 1-4](https://docs.
   },
 }
 ```
+
+## Webpack Configuration
+Webpack is a bit of a bear to configure, in setting it up for both development and build I learned a bit about the use of plugins and the configuration of the webpack.config.js. I feel that it is very good for as a build tool, but would warn against using it for development as if you dont have it set up perfectly you will consistantly run into road blocks and will need to experiment with plugins and configs to get it to do what you want (mostly).
+
+### Plugins
+HtmlWebpackPlugin: Required if you want your entry point to be HTML instead of JS with a generated HTML file. This is the common use case for most developers. It also allows faster time to interaction as you dont need to load the entire JS before rendering something on the screen
+
+CleanWebpackPlugin: Simple plugin just deletes your build folder, I can see this simplfying cross os development if you dont want to use a node package like rmraf
+
+CopyWebpackPlugin: will copy files directly into your distribution folder. I found this useful as my images were added to the HtmlWebpackPlugin. These will not be automatically added to your distribution folder if you use standard img references unless you:
+
+* import the image into your scss as backround images. 
+* Or use lodash template (I did not test this) `<img src="<%=require('./src/assets/logo.png')%>">` inside your html.
+
+I decided to use this method as I wanted to stay with standard HTML, and background images are treated differently as they are not printed.
+
+MiniCssExtractPlugin: I used this to remove the CSS file from being added to the JS file. For a more standard HTML / JS / CSS file seperation
+
+OptimizeCSSAssetsPlugin & UglifyJsPlugin: As MiniCssExtractPlugin did not minify the css code I had to find a plugin to minify the CSS during the build process. UglifyJsPlugin is needed to minify the JS files, webpack by default will minify your JS code but once an optimizer is set webpack no longer uses the default JS minifier.
 
