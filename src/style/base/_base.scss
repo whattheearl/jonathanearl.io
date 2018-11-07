@@ -56,10 +56,14 @@ ul, li {
     list-style: none;
 }
 
-a {
+a, a:link {
     font-size: 2rem;
-    color: inherit;
+    color: $primary;
     text-decoration: inherit;
+}
+
+a:visited {
+    color: darken($primary, 15%);
 }
 
 button {

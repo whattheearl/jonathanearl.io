@@ -17,19 +17,11 @@
         <div class="nav-bar__container">
             <div class="nav-bar__fixed">
                 <div class="nav-bar__logo"><a href="/" alt="home">Earl</div></a>
-                <!-- <div class="nav-bar__name">
-                    <div class="nav-bar__name--first">                
-                        <a href="/" alt="home">Jonathan</a>
-                    </div> 
-                    <div class="nav-bar__name-container">
-                        <div class="nav-bar__name--last"><a href="/" alt="home">Earl</a></div>
-                    </div> 
-                </div> -->
                 <button class='nav-bar__menu-button'><i class="fas fa-bars"></i> Menu</button>        
             </div>
             <nav class="nav-bar__navigation">
                 <ul class="nav-bar__list hidden">
-                    <li class="nav-bar__item"><a href="/#about">About</a></li>
+                    <li class="nav-bar__item"><a href="/#skills">Skills</a></li>
                     <li class="nav-bar__item"><a href="/#projects">Projects</a></li>
                     <li class="nav-bar__item"><a href="/#contact">Contact</a></li>
                 </ul>
@@ -49,17 +41,17 @@
                     <ul class="main-header__list">
                         <li class="main-header__icon">
                             <a href="mailto:earl.jonathan@gmail.com">
-                                <i class="fas fa-envelope"></i><span class="main-header__icon-text"> Email</span>
+                                <i class="fas fa-envelope"></i><span class="main-header__icon-text"></span>
                             </a>
                         </li>
                         <li class="main-header__icon">
                             <a href="https://www.linkedin.com/in/whattheearl/">
-                                <i class="fab fa-linkedin"></i><span class="main-header__icon-text"> LinkedIn</span>
+                                <i class="fab fa-linkedin"></i><span class="main-header__icon-text"></span>
                             </a>
                         </li>
                         <li class="main-header__icon">
                             <a href="https://github.com/whattheearl">
-                                <i class="fab fa-github"></i><span class="main-header__icon-text"> GitHub</span>
+                                <i class="fab fa-github"></i><span class="main-header__icon-text"></span>
                             </a>
                         </li>
                     </ul>
@@ -67,44 +59,125 @@
             </div>
         </div>
     </header>
-    <span id="about"> &nbsp; </span>
+    <span id="skills"> &nbsp; </span>
     <section class="section">
-        <h2 class="section__title">
-            Hello!
-        </h2>
-        <div class="introduction__snippet">
-            I am front-end engineer with 2 years experience working in IT building internal tools. I love developing new features for UI in React. <br><br> I am a self professed lover of NPM and the modern web stack and enjoy building applications using open source and cloud services. 
+        <h2 class="section__title">Skills</h2>
+        <div class="skills__container">
+            <div class="skill">
+                <div class="skill__title">Front-End Engineer</div>
+                <div class="skill__label">Languages</div>
+                <ul class="skill__language-list">
+                    <li class="skill__item">HTML (JSX, Pug)</li>
+                    <li class="skill__item">CSS (SCSS)</li>
+                    <li class="skill__item">JavaScript JS (ES5, ES6)</li>
+                </ul>
+                <div class="skill__label">Frameworks</div>
+                <ul class="skill__specialty-list">
+                    <li class="skill__item">React</li>
+                    <li class="skill__item">JQuery</li>
+                </ul>
+            </div>
+            <div class="skill">
+                <div class="skill__title">Back-End Engineer</div>
+                <div class="skill__label">Language</div>
+                <ul class="skill__language-list">
+                    <li class="skill__item">JavaScript JS</li>
+                </ul>
+                <ul class="skill__framework-list">
+                    <li class="skill__item">Express</li>
+                </ul>
+                <ul class="skill__specialty-list">
+                    <li class="skill__item">Restful API</li>
+                    <li class="skill__item">Authentication (Passport)</li>
+                    <li class="skill__item">NoSQL (Mongoose)</li>
+                </ul>
+            </div>
+
+            <div class="skill">
+                <div class="skill__title">Scripting</div>
+                <div class="skill__label">Languages</div>
+                <ul class="skill__language-list">
+                    <li class="skill__item">JavaScript JS</li>
+                    <li class="skill__item">Powershell PS</li>
+                    <li class="skill__item">Python</li>
+                </ul>
+            </div>
+        </div>
+        <div class="tools__container">
+            <div class="tools__label">Tooling:</div>
+            <ul class="tools__list">
+                <li class="tools__item">Git,</li>
+                <li class="tools__item">NPM,</li>
+                <li class="tools__item">Sass,</li>
+                <li class="tools__item">Gulp,</li>
+                <li class="tools__item">Webpack</li>
+            </ul>
         </div>
     </section>
 
     <span id="projects"> &nbsp; </span>
     <section class="section">
         <h2 class="section__title">Projects</h2>
+
         <article class="project__container">
-            <h3 class="project__name">Contact-Service</h3>
-            <div class="project__date">August 2018</div>
+            <h3 class="project__name">bkmrkr</h3>
+            <div class="project__date">Current</div>
             <div class="project__row">
                 <div class="project__column--left">
                     <div class="project__img-container">
-                        <img class="project__img" src="./assets/img/projects/gcf.png" alt="picture of project">
+                        <img class="project__img" src="./assets/img/projects/bkmrkr.png" alt="picture of project">
                     </div>
                 </div>
                 <div class="project__column--right">
                     <div class="project__detail">
-                        Built a contact-service using Nodemailer and google cloud functions to dispatch contact emails
+                        Have you ever needed to change tasks, but don't want to lose the information in the tabs you have open? bkrmrk is a chrome plugin to make switching context's easier. Quickly save your open tabs in local cache for later reference.
                     </div>
                     <div class="project__extras">
-                        It was pretty cool, you no longer need to spin up a server for infrequently run super short processes.
+                        Built using React for UI, custom built UI elements. Storage is currently limited to local cache.
                     </div>
                     <ul class="project__link-list">
                         <li>
-                            <a href="/#contact">
-                                <i class="fas fa-external-link-alt"></i> Check it out!
+                            <a href="https://chrome.google.com/webstore/detail/bkmrkr/fpebadocnijkabapochompcgjedcbgno?hl=en">
+                                <i class="fas fa-external-link-alt"></i> Install
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/MetaHues/kg-client">
-                                <i class="fab fa-github"></i> Repo
+                            <a href="https://github.com/whattheearl/NewTab">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        
+        <hr class="project__divider">
+
+        <article class="project__container">
+            <h3 class="project__name">Kons Site Template</h3>
+            <div class="project__date">September 2018</div>
+            <div class="project__row">
+                <div class="project__column--left">
+                    <div class="project__img-container">
+                        <img class="project__img" src="./assets/img/projects/kons.png" alt="picture of project">
+                    </div>
+                </div>
+                <div class="project__column--right">
+                    <div class="project__detail">
+                        This site template was built using React static site generator Gatsby for a super fast user experience. Hosted on AWS S3, built using scalable CSS methods (BEM) and custom Responsive UI React components. Design <a href="https://dribbble.com/shots/3761787-Kons-Construction-Firm-Website" alt="logan cee dribbbler">@Logan Cee</a>
+                    </div>
+                    <div class="project__extras">
+                        
+                    </div>
+                    <ul class="project__link-list">
+                        <li>
+                            <a href="https://kons.jonathanearl.io/">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/whattheearl/Kons">
+                                <i class="fab fa-github"></i> Code
                             </a>
                         </li>
                     </ul>
@@ -133,7 +206,7 @@
                     <ul class="project__link-list">
                         <li>
                             <a href="https://metahues-kg-api.herokuapp.com/">
-                                <i class="fas fa-external-link-alt"></i> Check it out!
+                                <i class="fas fa-external-link-alt"></i> Demo
                             </a>
                         </li>
                         <li>
@@ -164,7 +237,7 @@
                 </div>
                 <div class="project__column--right">
                     <div class="project__detail">
-                        This was a quick project to make some PS scripts usable to ender users without needing to use the command line.
+                        This was a quick project to make some PS scripts usable to internal users without needing to use the command line.
                     </div>
 
                     <div class="project__extras">
@@ -192,7 +265,7 @@
                         <ul class="project__link-list">
                             <li>
                                 <a href="game_gui" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Check it out!
+                                    <i class="fas fa-external-link-alt"></i> Demo
                                 </a>
                             </li>
                             <li>

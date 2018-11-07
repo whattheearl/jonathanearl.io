@@ -2,17 +2,10 @@
 .skills {
     @extend %center-child-vertical;
 
-    &__title {
-        margin: 0 auto;
-        margin-bottom: 1rem;
-    }
-
     &__container {
         display: flex;
-        max-width: 800px;
-        width: 75%;
-        justify-content: space-evenly;
         margin-bottom: 1rem;
+        justify-content: space-around;
     }
 }
 
@@ -22,8 +15,16 @@
     padding: 1rem;
     width: 23%;
 
+    &__title {
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        color: tomato;
+    }
+
     &__item {
-        text-align: center;
+        list-style-type: circle;
+        padding-left: 1rem; 
+        list-style-position: inside;
     }
 }
 
