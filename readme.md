@@ -82,7 +82,7 @@ Simple plugin just deletes your build folder, I can see this simplfying cross os
 will copy files directly into your distribution folder. I found this useful as my images were linked in the HTML file. These will not be automatically added to your distribution folder if you use standard img references (`<img src='/assets/img/cutekitty42' alt='cutest kitten' />`) unless you:
 
 * use import in SCSS and set the image using background-image. 
-* Or use lodash template (I did not test this) `<img src="<%=require('./src/assets/logo.png')%>">` inside your html. Assets are not seen unless imported via JS somewhere.
+* Or use lodash template (I did not test this) `<img src="<%=require('./src/assets/logo.png')%>">` inside your html if your using HtmlWebpackPlugin. Assets are not seen unless imported via JS somewhere.
 
 I decided to use CopyWebpackPlugin as I wanted to stay with standard HTML, and background images are treated differently than standard images.
 
