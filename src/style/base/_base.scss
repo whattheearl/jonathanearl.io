@@ -10,7 +10,8 @@ html {
 }
 
 body {
-    background-color: $blue;
+    margin: 2rem;
+    background-color: $white;
     font-family: $main-font;
     color: $black;
     font-size: 2rem;
@@ -20,7 +21,7 @@ body {
 .section {
     box-sizing: border-box;
     width: 97%;
-    margin: 0 auto 4rem auto;
+    margin: 0 auto 2rem auto;
     background-color: $white;
     padding: 4rem 2rem;
     @extend %center-child-vertical;
@@ -63,7 +64,7 @@ a, a:link {
 }
 
 a:visited {
-    color: darken($primary, 15%);
+    color: $primary;
 }
 
 button {

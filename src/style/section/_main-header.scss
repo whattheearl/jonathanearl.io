@@ -7,10 +7,12 @@
     padding: 3rem 0;
     margin-bottom: 3rem;
     background-color: $white;
-    @media (min-width: $large-size) 
-    {
-        padding: 9rem 0;
-    }
+
+        justify-content: center;
+        height: calc(100vh - 2rem);
+        padding: 0;
+        margin: 0;
+
     
     &__img {
         width: 150px;
@@ -54,13 +56,12 @@
 
     &__title {
         margin: 0 auto;
-        
-        font-size: 15vw;
+        font-size: 6vw;
 
         @media (min-width: $medium-size) {
             display: flex;
             flex-direction: row;
-            font-size: 8vw;
+            font-size: 6vw;
             
             & > div:last-child {
                 margin-left: .5rem;
