@@ -10,7 +10,7 @@
         align-items: center;
         margin: 0 auto;
 
-        @media (min-width: $medium-size) {
+        @media (min-width: $large-size) {
             flex-direction: row;
             justify-content: center;
             align-items: stretch;
@@ -30,24 +30,32 @@
 
 
 .skill {
-    &--2{
-        position: relative;
-        transform: translateY(-4rem);
-        margin: 0 2rem;
-    }
-
-    &--1, &--3 {
-        position: relative;
-        transform: translateY(2rem);
-    }
-
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-
-    width: 25vw;
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
     box-shadow: 0 1rem 2.5rem #33333322;
+    
+    width: 100vw;
+    max-width: 400px;
+    justify-self: flex-start;
+
+
+    @media (min-width: $large-size) {
+        width: 33vw;
+        // offset the skill cards
+        &--2{
+            position: relative;
+            transform: translateY(-4rem);
+            margin: 0 2rem;
+            align-self: flex-start;
+        }
+    
+        &--1, &--3 {
+            position: relative;
+            transform: translateY(2rem);
+        }
+    }
 
     &__header {
         &--front {
