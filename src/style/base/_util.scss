@@ -8,3 +8,15 @@
 .hidden {
     display: none !important;
 }
+
+$logo-padding: 8px;
+$logo-padding-right: $logo-padding * 3 / 5.5;
+
+.new_logo {
+    background-color: #333;
+    color: white;
+    display: inline-block;
+    padding: $logo-padding $logo-padding-right $logo-padding $logo-padding;
+    letter-spacing: .35rem;
+    line-height: 1.9rem;
+}
