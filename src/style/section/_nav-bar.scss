@@ -9,6 +9,10 @@
     color: $black;
     font-size: 3rem;
     border-bottom: 1px solid $white;
+    max-width: 1200px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
 
     &__logo {
         margin: -1.25rem 0;

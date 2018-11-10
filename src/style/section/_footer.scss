@@ -9,6 +9,7 @@ footer {
     color: $grey;
 
     &__container {
+        max-width: 1200px;
         box-sizing: border-box;
         width: 97%;
         padding: 0 2rem;

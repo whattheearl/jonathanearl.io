@@ -1,18 +1,15 @@
 /* main-header of HomePage */
 .main-header {
+    max-width: 1200px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 0;
-    margin-bottom: 3rem;
+    justify-content: center;
     background-color: $white;
-
-        justify-content: center;
-        height: calc(100vh - 2rem);
-        padding: 0;
-        margin: 0;
-
+    height: calc(100vh - 2rem);
+    padding: 0;
+    margin: 0 auto;
     
     &__img {
         width: 150px;
@@ -57,6 +54,7 @@
     &__title {
         margin: 0 auto;
         font-size: 6vw;
+        font-weight: 500;
 
         @media (min-width: $medium-size) {
             display: flex;
@@ -69,7 +67,7 @@
         }
 
         @media (min-width: $large-size) {
-            font-size: 6vw;            
+            font-size: 10rem;            
         }
     }
 
@@ -86,7 +84,8 @@
         }
 
         @media (min-width: $large-size) {
-            font-size: 3vw;
+            font-size: 3rem;
+            font-weight: 300;
         }
     }
 
@@ -114,7 +113,7 @@
             }
 
             @media (min-width: $large-size) {
-                font-size: 2.5vw;
+                font-size: 5rem;
             }
         }
     }
