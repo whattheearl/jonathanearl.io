@@ -1,15 +1,14 @@
 /* Main Nav Bar */
 .nav-bar {
+    background-color: #ffffffdd;
+    color: $black;
     display: flex;
     flex-direction: column;
-    background-color: #ffffffdd;    
     z-index: 1;
     position: fixed;
-    width: calc(100vw - 4rem);
-    color: $black;
+    width: 100vw;
     font-size: 3rem;
     border-bottom: 1px solid $white;
-    max-width: 1200px;
     left: 50%;
     top: 0;
     transform: translateX(-50%);
@@ -24,21 +23,38 @@
     }
 
     &__fixed {
+        width: 100%;
         display:flex;
         align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        @media (min-width: $medium-size) {
+
+        }
     }
 
     &__container {
         display: flex;
         flex-direction: column;
-        width: 95%;
         margin: 0 auto;
+        width: 100%;
+
+        @media (min-width: $medium-size) {
+            display: flex;
+            flex-direction: row;
+            max-width: 900px;
+        }
     }
 
     &__list {
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media(min-width: $medium-size) {
+            display: flex !important; // I believe this is to override inline setting in JS
+            flex-direction: row;
+        }
     }
 
     &__item {
@@ -47,7 +63,7 @@
         & > a {
             height: 100%;
             width: 100%;
-            color: $black;
+            color: $black;   
         }
 
         &:last-child {
@@ -57,12 +73,17 @@
 
     &__menu-button {
         margin-left: auto;
-        color: $white;
-        background-color: $black;
         font-size: 2.5rem;
-        box-shadow: 0 1rem 2.5rem #33333322;
-        width: 5rem;
-        height: 5rem;
+        border-radius: 50%;
+        // box-shadow: 0 1rem 2.5rem #33333322;
+        width: 53px;
+        height: 52px;
+        background-color: $white;
+        color: $black;
+        @media (min-width: $large-size) {
+            color: $white;
+            background-color: $black;
+        }
     }
 
     &__notification {
@@ -72,29 +93,9 @@
         justify-content: center;
     }
 
-    @media(min-width: 900px) {
-
-        &__container {
-            display: flex;
-            flex-direction: row;
-            box-sizing: border-box;
-            width: 75%;
-            padding: 0 2rem;
-        }
-
-        &__fixed {
-            display: flex;
-            flex-direction: row;
-        }
-
-        &__navigation {
-            display: flex;
-            margin-left: auto;
-        }
+    @media(min-width: $medium-size) {
 
         &__list {
-            display: flex !important;
-            flex-direction: row;
         }
 
         &__menu-button {
@@ -106,6 +107,9 @@
             margin-left: 2rem;
             &:last-child {
                 margin-bottom: 1.25rem;
+            }
+            & > a {
+                color: $black; 
             }
         }
     }

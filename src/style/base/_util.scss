@@ -13,8 +13,6 @@ $logo-padding: 6px;
 $logo-padding-right: $logo-padding * 3 / 5.5;
 
 .new_logo {
-    background-color: #333;
-    color: white;
     display: inline-block;
     padding: $logo-padding $logo-padding-right $logo-padding $logo-padding;
     letter-spacing: .44rem;
@@ -25,4 +23,10 @@ $logo-padding-right: $logo-padding * 3 / 5.5;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #fff;
+    color: #333;
+    @media (min-width: $medium-size) {
+        background-color: #333;
+        color: white;
+    }
 }

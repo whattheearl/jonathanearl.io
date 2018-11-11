@@ -79,7 +79,8 @@ module.exports = {
         }),
         new CleanWebpackPlugin('dist'),
         new CopyWebpackPlugin([
-            {from: 'src/assets', to:  'assets'}
+            {from: 'src/assets', to:  'assets'},
+            {from: 'src/favicon.ico', to: 'favicon.ico'}
         ]),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
