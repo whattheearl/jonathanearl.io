@@ -19,7 +19,10 @@
 
     &__section {
         width: 100%;
-        padding-top: 70px;
+        margin-top: -27px;
+        @media (min-width: $medium-size) {
+            margin-top: 0;
+        }
         @media (min-width: $large-size) {
             padding-top: 120px;
         }
@@ -117,7 +120,7 @@
     }
 
     &__list {
-        padding: 3rem 2rem;
+        padding: 2rem 2rem;
         flex: 1;
         display: flex;
         flex-direction: column;

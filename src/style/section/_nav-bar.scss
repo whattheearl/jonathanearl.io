@@ -94,8 +94,8 @@
         position: fixed;
         top: 2rem; 
         right: 20px;
-        width: 53px;
-        height: 53px;
+        width: 64px;
+        height: 64px;
         background-color: $white;
         z-index: 1000;
         border-radius: 50%;
@@ -133,8 +133,8 @@
     &__background {
         z-index: 10; 
         position: fixed;
-        top: calc(26px/2); 
-        right: calc(26px/2 + 20px);
+        top: 40px; 
+        right: 30px;
         width: 30px;
         height: 30px;
         background-image: radial-gradient(#ffffffee, #fff);
