@@ -1,17 +1,22 @@
 /* Main Nav Bar */
 .nav-bar {
-    background-color: #ffffffdd;
     color: $black;
     display: flex;
     flex-direction: column;
-    z-index: 1;
+    z-index: 20;
     position: fixed;
     width: 100vw;
     font-size: 3rem;
-    border-bottom: 1px solid $white;
     left: 50%;
     top: 0;
     transform: translateX(-50%);
+
+    @media(min-width: $medium-size) {
+        background-color: #ffffffdd;
+        &__menu-button {
+            display: none;
+        }
+    }
 
     &__name {
         display: flex;
@@ -36,7 +41,6 @@
         flex-direction: column;
         margin: 0 auto;
         width: 100%;
-
         @media (min-width: $medium-size) {
             display: flex;
             flex-direction: row;
@@ -56,23 +60,17 @@
 
     &__item {
         margin: 1.25rem;
-
         & > a {
             height: 100%;
             width: 100%;
             color: $black;   
-        }
-
-        &:last-child {
-            margin-bottom: 3rem;
-        }
+        }       
     }
 
     &__menu-button {
         margin-left: auto;
         font-size: 2.5rem;
         border-radius: 50%;
-        // box-shadow: 0 1rem 2.5rem #33333322;
         width: 53px;
         height: 52px;
         background-color: $white;
@@ -89,22 +87,135 @@
         font: $black;
         justify-content: center;
     }
+}
 
-    @media(min-width: $medium-size) {
+.menu {
+    &__button {
+        position: fixed;
+        top: 2rem; 
+        right: 20px;
+        width: 53px;
+        height: 53px;
+        background-color: $white;
+        z-index: 1000;
+        border-radius: 50%;
+        box-shadow: 0 1rem 2.5rem #33333322;
 
-        &__menu-button {
+        @media (min-width: $medium-size) {
             display: none;
         }
+    }
 
-        &__item {
-            font-size: 2rem;
-            margin-left: 2rem;
-            &:last-child {
-                margin-bottom: 1.25rem;
-            }
-            & > a {
-                color: $black; 
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &, &::before, &::after{
+            display: inline-block;
+            width: 3rem;
+            height: 2px;
+            background-color: #000;
+            content: '';
+            position: absolute;   
+        }
+
+        &::before {
+            top: -1rem;
+        }
+    
+        &::after {
+            top: 1rem;
+        }
+    }
+
+    &__background {
+        z-index: 10; 
+        position: fixed;
+        top: calc(26px/2); 
+        right: calc(26px/2 + 20px);
+        width: 30px;
+        height: 30px;
+        background-image: radial-gradient(#ffffffee, #fff);
+        border-radius: 50%;
+        transition: all .3s cubic-bezier(0.77, 0, 0.175, 1);
+
+        @media (min-width: $medium-size) {
+            display: none;
+        }
+    }
+    // backgorund animation
+    &__checkbox:checked ~ &__background  {
+        transform: scale(75);
+    }
+
+    &__nav {
+        z-index: 100;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity .3s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    // animation
+    &__checkbox:checked ~ &__nav  {
+        opacity: 1;
+    }
+
+    &__list {
+        display:flex;
+        flex-direction: column;
+    }
+
+    &__link {
+        align-self: stretch;
+        &, &:visited, &:link {
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 2.5rem;
+            color: $black;
+            padding: .25rem 0;
+            margin: 4px 0;
+            display: flex;
+            
+            @media(min-width: $medium-size) {
+                font-size: 2rem;
+                margin-left: 2rem;
             }
         }
     }
+
+    &__checkbox {
+        display: none;
+    }
 }
+
+$logo-padding: 6px;
+$logo-padding-right: $logo-padding * 3 / 5.5;
+.new_logo {
+    display: inline-block;
+    padding: $logo-padding $logo-padding-right $logo-padding $logo-padding;
+    letter-spacing: .44rem;
+    line-height: 1.9rem;
+    width: 53px;
+    height: 53px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 1rem 2.5rem #33333322;
+
+    position: relative;
+    top: 2rem;
+    @media (min-width: $medium-size) {
+        top: 0;
+        background-color: #333;
+        color: white;
+    }
+}
+

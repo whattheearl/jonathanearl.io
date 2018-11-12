@@ -1,5 +1,4 @@
 
-import axios from 'axios'
 // Styles
 import './style/index.scss'
 

@@ -9,34 +9,6 @@
     display: none !important;
 }
 
-$logo-padding: 6px;
-$logo-padding-right: $logo-padding * 3 / 5.5;
 
-.new_logo {
-    display: inline-block;
-    padding: $logo-padding $logo-padding-right $logo-padding $logo-padding;
-    letter-spacing: .44rem;
-    line-height: 1.9rem;
-    width: 44px;
-    height: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    color: #333;
-    @media (min-width: $medium-size) {
-        background-color: #333;
-        color: white;
-    }
-}
 
-.menu__button {
 
-}
-
-.menu__icon {
-    width: 3rem;
-    height: 1px;
-    color: $black;
-}

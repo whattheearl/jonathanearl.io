@@ -21,9 +21,8 @@
                             <div class="inner_logo">RL</div>
                         </div>
                     </a>
-            </div>
-            <div class="menu__button"><span class="menu__icon"></span></div>
-            <button class='nav-bar__menu-button'><i class="fas fa-bars"></i></button>        
+                </div>
+            <!-- <button class='nav-bar__menu-button'><i class="fas fa-bars"></i></button>         -->
             </div>
             <nav class="nav-bar__navigation">
                 <ul class="nav-bar__list hidden">
@@ -45,6 +44,24 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Navigation Section -->
+    <div class="mobile__navigation">
+        <input id="checkbox" class="menu__checkbox" type="checkbox" />
+        <div class="menu__background">&nbsp;</div>
+        <label class=menu__button for="checkbox">
+            <div class="menu__icon"></div>
+        </label>
+        <nav class="menu__nav">
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" href="/#skills">Skills</a></li>
+                <li class="menu__item"><a class="menu__link" href="/#projects">Projects</a></li>
+                <li class="menu__item"><a class="menu__link" href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Skill Section -->
     <span id="skills"> &nbsp; </span>
     <section class="skills__section">
         <!-- <h2 class="skills__title">Skills</h2> -->
@@ -100,10 +117,10 @@
         </div>
     </section>
 
+    <!-- Project Section -->
     <span id="projects"> &nbsp; </span>
     <section class="section">
         <h2 class="section__title">Projects</h2>
-
         <article class="project__container">
             <h3 class="project__name">bkmrkr</h3>
             <div class="project__date">Current</div>
@@ -262,8 +279,8 @@
         </article>
     </section>
 
+    <!-- Contact Section -->
     <span id="contact">&nbsp;</span>
-
     <footer>
         <div class="contact__container">
             <h2 class="contact__title">Get in touch</h2>
