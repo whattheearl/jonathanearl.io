@@ -18,8 +18,11 @@
     }
 
     &__section {
-        padding-top: 80px;
         width: 100%;
+        padding-top: 70px;
+        @media (min-width: $large-size) {
+            padding-top: 120px;
+        }
     }
 
     &__title {
@@ -114,7 +117,7 @@
     }
 
     &__list {
-        padding: 4rem 2rem;
+        padding: 3rem 2rem;
         flex: 1;
         display: flex;
         flex-direction: column;
