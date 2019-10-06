@@ -2,8 +2,8 @@
   "dependencies": {},
   "scripts": {
     "build": "NODE_ENV=production webpack --optimize-minimize",
-    "serve": "webpack-dev-server --hot --mode development --open",
-    "deploy": "yarn build && aws s3 sync ./dist s3://jonathanearl.io"
+    "start": "webpack-dev-server --hot --mode development --open",
+    "deploy": "npm run build && aws s3 sync ./dist s3://jonathanearl.io"
   },
   "devDependencies": {
     "axios": "^0.18.0",
