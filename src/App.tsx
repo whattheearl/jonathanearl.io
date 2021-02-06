@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
-} from "react-router-dom";
-import Projects from './projects/Projects';
+} from 'react-router-dom';
+import ProjectList from './projects/list/ProjectList';
+import ProjectEdit from './projects/edit/ProjectEdit';
 
 export default function App() {
   return (
@@ -26,7 +27,10 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/admin/projects">
-            <Projects></Projects>
+            <ProjectList/>
+          </Route>
+          <Route path="/admin/projects/edit">
+            <ProjectEdit/>
           </Route>
           <Route path="/">
             <Home />
