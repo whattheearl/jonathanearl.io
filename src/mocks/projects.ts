@@ -4,9 +4,8 @@ export const PROJECTS: Project[] = [
     {
         name: "bkmrkr",
         summary: "Have you ever needed to change tasks, but don't want to lose the information in the tabs you have open? bkrmrk is a chrome plugin to make switching context's easier. Quickly save your open tabs in local cache for later reference. Built using React for UI, custom built UI elements. Storage is currently limited to local cache.",
-        startDate: null,
-        endDate: null,
-
+        startDate: "",
+        endDate: "",
         media: {
             previewImg: "https://jonathanearl.io/assets/img/projects/bkmrkr-small.jpg",
             url: "https://chrome.google.com/webstore/detail/bkmrkr/fpebadocnijkabapochompcgjedcbgno?hl=en",
@@ -15,7 +14,7 @@ export const PROJECTS: Project[] = [
     },
     {
         name: "FIG",
-        startDate: null,
+        startDate: "",
         endDate: "6/1/2018",
         summary: "A Instagram-Like app using React/Redux for the front-end, and Express/Mongoose for the API The most difficult part was figuring out how to configure passport for user authentication! Currently you can post photo's and follow users so they show up in your feed. I loved how React allows you to build reusable components. OOP on the web!",
         media: {
@@ -26,7 +25,7 @@ export const PROJECTS: Project[] = [
     },
     {
         name: "Game Engine GUI",
-        startDate: null,
+        startDate: "",
         endDate: "6/1/2016",
         summary: "This was fun an 8 week project to build a front-end for a student made game engine.",
         media: {
