@@ -1,4 +1,5 @@
 import react from 'react';
+import { Link } from 'react-router-dom';
 
 import { PROJECTS } from '../mocks/projects';
 
@@ -7,7 +8,7 @@ export default function() {
     const projectList = PROJECTS.map((project) => (
         <div>{project.name}
             <span>
-                {/* <button><Link to="edit">edit</Link></button> */}
+                <button><Link to={`/admin/projects/${project.name}`}>edit</Link></button>
             </span>
         </div>
     ))
