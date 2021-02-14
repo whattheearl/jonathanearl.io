@@ -12,17 +12,18 @@ export class ProjectController {
     @Get(':id')
     getById(@Param('id') pId: string) {
         const id = parseInt(pId);
-        if (Number.isNaN(id))
+
+        if (Number.isNaN(id)) {
             throw new BadRequestException('ID IS NOT A NUMBER');
+        }
 
-        const projects = MOCK_PROJECTS.filter(p => {
-            return p.id === id;
-        });
+        const projects = MOCK_PROJECTS.filter(p =>  p.id === id)[0];
 
-        if (projects.length === 0)
+        if (!projects) {
             throw new NotFoundException();
+        }
 
-        return projects[0];
+        return projects;
     }
 
     @Post()
