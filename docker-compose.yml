@@ -9,7 +9,6 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
-
     ports:
       - "80:80"
       - "8080:8080"
@@ -26,3 +25,12 @@ services:
       - "traefik.http.routers.myapi.rule=Host(`api.dev.localhost`)"
       - "traefik.http.routers.myapi.entrypoints=web"
   
+  client:
+    build:
+      context: "./client"
+    volumes:
+      - "./client:/app"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.client.rule=Host(`dev.localhost`)"
+      - "traefik.http.routers.client.entrypoints=web"
