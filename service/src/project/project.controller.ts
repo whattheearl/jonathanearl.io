@@ -1,5 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
-import { ApiResponse } from '@nestjs/swagger';
+import { BadRequestException, Controller, Get, NotFoundException, Param, Post, Put } from '@nestjs/common';
 
 import { MOCK_PROJECTS } from '../mocks/projects';
 
@@ -11,14 +10,28 @@ export class ProjectController {
     }
 
     @Get(':id')
-    getById(@Param('id') id: string) {
-        console.log(id);
-        console.log({MOCK_PROJECTS});
-        const project = MOCK_PROJECTS.filter(p => {
-            console.log({p, id});
-            return p.id === Number(id)
-        })[0];
-        console.log({project});
-        return project;
+    getById(@Param('id') pId: string) {
+        const id = parseInt(pId);
+        if (Number.isNaN(id))
+            throw new BadRequestException('ID IS NOT A NUMBER');
+
+        const projects = MOCK_PROJECTS.filter(p => {
+            return p.id === id;
+        });
+
+        if (projects.length === 0)
+            throw new NotFoundException();
+
+        return projects[0];
+    }
+
+    @Post()
+    createProject() {
+        return 'Create new project';
+    }
+
+    @Put(':id')
+    updateById(@Param('id') pId: string) {
+        return 'update project by id';
     }
 }

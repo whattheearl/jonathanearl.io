@@ -37,4 +37,4 @@ export const MOCK_PROJECTS: Project[] = [
             url: "http://gamegui.jonathanearl.io.s3-website.us-east-2.amazonaws.com/"
         }
     }
-] as Project[];
+];
