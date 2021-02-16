@@ -8,7 +8,7 @@ async function bootstrap() {
   app.enableCors({ origin: process.env.ADMIN_APP_ORIGIN } as CorsOptions);
 
   const config = new DocumentBuilder()
-    .setTitle('ProfileService')
+    .setTitle('Project Api')
     .setDescription('BFF for jonathanearl.io')
     .setVersion('0.1')
     .build();
