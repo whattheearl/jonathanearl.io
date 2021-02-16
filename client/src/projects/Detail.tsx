@@ -9,8 +9,8 @@ export default function() {
     useEffect(() => {
         fetch('http://api.admin.localhost/project')
             .then(res => res.json())
-            .then((res: any) => {
-                const newProject = res.filter((p: {name: string}) => p.name === id)[0];
+            .then((res: Project[]) => {
+                const newProject = res.filter(p => p.name === id)[0];
                 console.log(newProject);
                 setProject({...newProject});
             });
