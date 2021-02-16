@@ -1,12 +1,24 @@
-import react, { SyntheticEvent, useState } from 'react';
+import react, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Project } from '../../models/Project';
 import './EditForm.css'
-import { PROJECTS } from '../../mocks/projects';
 
 export default function () {
     const { id } = useParams() as { id: string };
-    const PROJECT = PROJECTS.filter(project => project.name === id)[0]
-    const [project, setProject] = useState({ ...PROJECT });
+    const [project, setProject] = useState<Project | undefined>();
+
+    useEffect(() => {
+        fetch('http://api.admin.localhost/project')
+            .then(res => res.json())
+            .then((res: Project[]) => {
+                const newProject = res.filter(p => p.name === id)[0];
+                setProject({...newProject});
+            });
+    }, [])
+
+    if (!project) {
+        return (<div>loading...</div>);
+    }
 
     const onChange = (event: React.FormEvent<HTMLTextAreaElement> | React.FormEvent<HTMLInputElement>) => {
         const { name, value } = event.currentTarget;

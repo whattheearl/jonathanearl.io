@@ -5,8 +5,8 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import ProjectList from './projects/components/ProjectList';
-import ProjectEdit from './projects/components/EditForm/EditForm';
+import ProjectList from './projects/List';
+import ProjectEdit from './projects/EditForm/EditForm';
 
 export default function App() {
   return (
