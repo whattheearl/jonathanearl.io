@@ -22,8 +22,17 @@ class ProjectService {
             });
     }
 
+    create(item: Project) {
+        const options = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(item)
+        } 
+        return fetch(`http://api.admin.localhost/project`, options)
+            .then(res => res.text);
+    }
+
     saveItem(item: Project) {
-        console.log(JSON.stringify(item))
         const options = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },

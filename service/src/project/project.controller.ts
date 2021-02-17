@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Controller, Get, NotFoundException, Param, Post, Put } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, HttpCode, NotFoundException, Param, Post, Put } from '@nestjs/common';
 import { randomInt } from 'crypto';
 import { Project } from 'src/models/Project';
 
@@ -25,6 +25,7 @@ export class ProjectController {
     }
 
     @Put(':id')
+    @HttpCode(204)
     updateById(@Param('id') pId: string, @Body() body: Project) {
         const project = this._getById(pId);
         MOCK_PROJECTS[MOCK_PROJECTS.indexOf(project)] = {...body};

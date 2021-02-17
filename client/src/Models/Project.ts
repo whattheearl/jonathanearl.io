@@ -1,5 +1,5 @@
 export default interface Project {
-    id: number;
+    id?: number;
     name: string;
     summary: string;
     startDate: string;
