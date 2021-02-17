@@ -1,19 +1,16 @@
 import react, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Project } from '../models/Project';
+
+import ProjectService from '../Service/Project';
+import Project from '../Models/Project';
 
 export default function() {
     const [project, setProject] = useState<Project | undefined>();
     const { id } = useParams() as { id: string };
 
     useEffect(() => {
-        fetch('http://api.admin.localhost/project')
-            .then(res => res.json())
-            .then((res: Project[]) => {
-                const newProject = res.filter(p => p.name === id)[0];
-                console.log(newProject);
-                setProject({...newProject});
-            });
+        ProjectService.getItemByName(id)
+            .then(res => setProject({...res}));
     }, [])
     
     if (!project) {

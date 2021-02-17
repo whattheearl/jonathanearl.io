@@ -1,4 +1,5 @@
-export interface Project {
+export default interface Project {
+    id: number;
     name: string;
     summary: string;
     startDate: string;

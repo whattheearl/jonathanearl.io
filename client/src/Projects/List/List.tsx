@@ -1,20 +1,16 @@
 import react, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Project } from '../../models/Project';
+import ProjectService from '../../Service/Project';
+import Project from '../../Models/Project';
 import './List.css';
 
 export default function() {
     const [projects, setProjects] = useState<any[]>([]);
     
     useEffect(() => {
-        fetch('http://api.admin.localhost/project')
-            .then(res => res.json())
-            .then((res: Project[]) => {
-                fetch('http://api.admin.localhost/project')
-                .then(res => res.json())
-                .then(res => setProjects([...res]));
-            });
+        ProjectService.getItems()
+            .then(res => setProjects([...res]))
     }, [])
 
     const projectList = projects.map(project => (

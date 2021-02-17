@@ -1,18 +1,17 @@
-import react, { useEffect, useState } from 'react';
+import react, { FormEvent, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Project } from '../../models/Project';
+import Project from '../../Models/Project';
 import './EditForm.css'
+import ProjectService from '../../Service/Project';
 
 export default function () {
     const { id } = useParams() as { id: string };
     const [project, setProject] = useState<Project | undefined>();
 
     useEffect(() => {
-        fetch('http://api.admin.localhost/project')
-            .then(res => res.json())
-            .then((res: Project[]) => {
-                const newProject = res.filter(p => p.name === id)[0];
-                setProject({...newProject});
+        ProjectService.getItemByName(id)
+            .then(project => {
+                setProject({...project});
             });
     }, [])
 
@@ -20,7 +19,7 @@ export default function () {
         return (<div>loading...</div>);
     }
 
-    const onChange = (event: React.FormEvent<HTMLTextAreaElement> | React.FormEvent<HTMLInputElement>) => {
+    const handleChange = (event: React.FormEvent<HTMLTextAreaElement> | React.FormEvent<HTMLInputElement>) => {
         const { name, value } = event.currentTarget;
         const data = {...project, media: { ...project.media }};
         switch(name) {
@@ -43,28 +42,35 @@ export default function () {
                 throw new Error('html element not in state');
         }
         setProject(data);
+    }
 
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        console.log('commit');
+        
     }
 
     return (
-        <form>
+        <form className="project-edit-form fill col" onSubmit={handleSubmit}>
             <h1>PROJECTDETAIL</h1>
             <h2>{project.name}</h2>
-            <div style={{display: "flex", flexDirection: "column"}}>
-                <label>Preview Image</label>
-                <input name="previewImg" type="text" value={project.media.previewImg} onChange={onChange}/>
+            <label>Preview Image</label>
+            <input name="previewImg" type="text" value={project.media.previewImg} onChange={handleChange}/>
 
-                <label>Github Url</label>
-                <input name="githubUrl" type="text" value={project.media.githubUrl} onChange={onChange}/>
+            <label>Github Url</label>
+            <input name="githubUrl" type="text" value={project.media.githubUrl} onChange={handleChange}/>
 
-                <label>Summary</label>
-                <textarea name="summary" value={project.summary} onChange={onChange}/>
+            <label>Summary</label>
+            <textarea name="summary" rows={4} value={project.summary} onChange={handleChange}/>
 
-                <label>Media Url</label>
-                <input name="url" type="text" value={project.media.url} onChange={onChange}/>
+            <label>Media Url</label>
+            <input name="url" type="text" value={project.media.url} onChange={handleChange}/>
 
-                <label>End date</label>
-                <input name="endDate" type="text" value={project.endDate} onChange={onChange}/>
+            <label>End date</label>
+            <input name="endDate" type="text" value={project.endDate} onChange={handleChange}/>
+
+            <div className="row">
+                <button type="submit">commit</button>
             </div>
         </form>
     );
