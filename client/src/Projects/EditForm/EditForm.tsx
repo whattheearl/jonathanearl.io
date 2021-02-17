@@ -44,10 +44,11 @@ export default function () {
         setProject(data);
     }
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log('commit');
-        
+        console.log(project);
+        await ProjectService.saveItem(project);
+        console.log('commit');   
     }
 
     return (
