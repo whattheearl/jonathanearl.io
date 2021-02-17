@@ -3,44 +3,34 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Redirect
 } from 'react-router-dom';
-import ProjectList from './projects/List';
-import ProjectEdit from './projects/EditForm/EditForm';
+
+import ProjectList from './Projects/List/List';
+import ProjectEdit from './Projects/EditForm/EditForm';
+import SideBar from './Navigation/SideBar';
+import './App.css';
 
 export default function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/admin/projects">projects</Link>
-            </li>
-          </ul>
-        </nav>
+      <div className="fill row">
+        <SideBar></SideBar>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/admin/projects/:id">
-            <ProjectEdit />
-          </Route>
-          <Route path="/admin/projects">
-            <ProjectList />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <main>
+          <Switch>
+            <Route path="/admin/projects/:id">
+              <ProjectEdit />
+            </Route>
+            <Route path="/admin/projects">
+              <ProjectList />
+            </Route>
+            <Route path="/">
+              <Redirect to="/admin/projects" />
+            </Route>
+          </Switch>
+        </main>
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
 }
