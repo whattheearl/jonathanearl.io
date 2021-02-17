@@ -1,8 +1,8 @@
 import react, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import { Project } from '../../models/Project';
-
-
+import './List.css';
 
 export default function() {
     const [projects, setProjects] = useState<any[]>([]);
@@ -18,14 +18,14 @@ export default function() {
     }, [])
 
     const projectList = projects.map(project => (
-        <li key={project.id}>
+        <li className="project-list-item" key={project.id}>
             <span>{project.name}</span>
             <span><button><Link to={`/admin/projects/${project.name}`}>edit</Link></button></span>
         </li>
     ))
 
     return (
-        <div className="fill">
+        <div className="project-list fill">
             <h1>Projects</h1>
             <ol>
                 <span>{projectList}</span>
