@@ -1,8 +1,10 @@
 import { BadRequestException, Body, Controller, Get, HttpCode, NotFoundException, Param, Post, Put } from '@nestjs/common';
-import { randomInt } from 'crypto';
 import { Project } from 'src/models/Project';
+import { CreateProject } from 'src/models/CreateProject';
 
 import { MOCK_PROJECTS } from '../mocks/projects';
+import { plainToClass } from 'class-transformer';
+import { randomInt } from 'crypto';
 
 @Controller('project')
 export class ProjectController {
@@ -18,10 +20,12 @@ export class ProjectController {
     }
 
     @Post()
-    createProject(@Body() body: Project) {
-        body.id = randomInt(8149819);
-        MOCK_PROJECTS.push(body);
-        return body;
+    async createProject(@Body() body: CreateProject) {
+        const project = plainToClass(Project, body);
+        // todo: use generator for guid?
+        project.id = randomInt(53292309);
+        MOCK_PROJECTS.push(project);
+        return project;
     }
 
     @Put(':id')
@@ -32,8 +36,8 @@ export class ProjectController {
         return;
     }
 
-    _getById(pId: string) {
-        const id = parseInt(pId);
+    private _getById(pId: string) {
+        const id = parseInt(pId, 10);
 
         if (Number.isNaN(id)) {
             throw new BadRequestException('ID IS NOT A NUMBER');

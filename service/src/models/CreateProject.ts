@@ -1,11 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNumber } from 'class-validator';
 import { ProjectMedia } from './ProjectMedia';
 
-export class Project {
-    @IsNumber()
-    @ApiProperty()
-    id: number;
+export class CreateProject {
     @ApiProperty()
     name: string;
     @ApiProperty()
