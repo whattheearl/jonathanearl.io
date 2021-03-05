@@ -21,18 +21,18 @@ services:
     volumes:
       - "./service:/app"
     environment:
-      - "ADMIN_APP_ORIGIN=http://admin.localhost"
+      - "ADMIN_APP_ORIGIN=http://jonathanearlio"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.myapi.rule=Host(`api.admin.localhost`)"
+      - "traefik.http.routers.myapi.rule=Host(`api.jonathanearlio`)"
       - "traefik.http.routers.myapi.entrypoints=web"
   
-  client:
+  jonathanearlio:
     build:
-      context: "./client"
+      context: "./jonathanearlio"
     volumes:
-      - "./client:/app"
+      - "./jonathanearlio:/app"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.client.rule=Host(`admin.localhost`)"
-      - "traefik.http.routers.client.entrypoints=web"
+      - "traefik.http.routers.jonathanearlio.rule=Host(`jonathanearlio`)"
+      - "traefik.http.routers.jonathanearlio.entrypoints=web"
