@@ -24,15 +24,15 @@ services:
       - "ADMIN_APP_ORIGIN=http://jonathanearlio"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.myapi.rule=Host(`api.jonathanearlio`)"
+      - "traefik.http.routers.myapi.rule=Host(`api.jonathanearlio.localhost`)"
       - "traefik.http.routers.myapi.entrypoints=web"
   
   jonathanearlio:
     build:
-      context: "./jonathanearlio"
+      context: "./jonathanearl.io"
     volumes:
-      - "./jonathanearlio:/app"
+      - "./jonathanearl.io:/app"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.jonathanearlio.rule=Host(`jonathanearlio`)"
+      - "traefik.http.routers.jonathanearlio.rule=Host(`jonathanearlio.localhost`)"
       - "traefik.http.routers.jonathanearlio.entrypoints=web"
