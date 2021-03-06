@@ -17,10 +17,10 @@ export default function App(): JSX.Element {
   return (
     <Router>
       <div className="fill row">
-        {/* <SideBar /> */}
+        <SideBar />
         <main>
           <Home />
-          {/* <Switch>
+          <Switch>
             <Route exact path="/admin/projects/new">
               <ProjectNew />
             </Route>
@@ -33,7 +33,7 @@ export default function App(): JSX.Element {
             <Route exact path="/">
               <Redirect to="/admin/projects" />
             </Route>
-          </Switch> */}
+          </Switch>
         </main>
       </div>
     </Router>
