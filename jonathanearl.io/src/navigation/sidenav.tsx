@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './SideBar.css';
+import './sidenav.css';
 
-export default function () {
+export default function SideNav() {
   return (
     <nav className="side-bar">
       <ul>

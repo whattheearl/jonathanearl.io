@@ -1,8 +1,8 @@
 import react, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import ProjectService from '../Service/Project';
-import Project from '../Models/Project';
+import ProjectService from '../service/project';
+import Project from '../models/project';
 
 export default function() {
     const [project, setProject] = useState<Project | undefined>();

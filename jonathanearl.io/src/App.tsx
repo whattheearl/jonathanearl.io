@@ -3,23 +3,24 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
 } from 'react-router-dom';
 
-import ProjectList from './Projects/List/List';
-import ProjectNew from './Projects/NewForm/NewForm';
-import ProjectEdit from './Projects/EditForm/EditForm';
-import SideBar from './Navigation/SideBar';
+import ProjectList from './projects/list/list';
+import ProjectNew from './projects/newform/newform';
+import ProjectEdit from './projects/editform/editform';
+import SideBar from './navigation/sidenav';
+import Home from './home';
 import './App.css';
 
-export default function App() {
+export default function App(): JSX.Element {
   return (
     <Router>
       <div className="fill row">
-        <SideBar></SideBar>
-
+        {/* <SideBar /> */}
         <main>
-          <Switch>
+          <Home />
+          {/* <Switch>
             <Route exact path="/admin/projects/new">
               <ProjectNew />
             </Route>
@@ -32,7 +33,7 @@ export default function App() {
             <Route exact path="/">
               <Redirect to="/admin/projects" />
             </Route>
-          </Switch>
+          </Switch> */}
         </main>
       </div>
     </Router>

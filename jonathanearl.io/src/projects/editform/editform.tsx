@@ -1,24 +1,28 @@
-import react, { FormEvent, useState } from 'react';
-import Project from '../../Models/Project';
-import ProjectService from '../../Service/Project';
+import React, { FormEvent, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import Project from '../../models/project';
+import './editform.css'
+import ProjectService from '../../service/project';
 
-export default function () {
-    const emptyProject: Project = {
-        name: '',
-        summary: '',
-        startDate: '',
-        endDate: '',
-        media: { url: '', githubUrl: '', previewImg: '' }
-    };
-    const [project, setProject] = useState<Project>(emptyProject);
+export default function ProjectEditForm() {
+    const { id } = useParams() as { id: string };
+    const [project, setProject] = useState<Project | undefined>();
+
+    useEffect(() => {
+        ProjectService.getItemByName(id)
+            .then(project => {
+                setProject({...project});
+            });
+    }, [])
+
+    if (!project) {
+        return (<div>loading...</div>);
+    }
 
     const handleChange = (event: React.FormEvent<HTMLTextAreaElement> | React.FormEvent<HTMLInputElement>) => {
         const { name, value } = event.currentTarget;
         const data = {...project, media: { ...project.media }};
         switch(name) {
-            case 'name':
-                data.name = value;
-                break;
             case 'summary':
                 data.summary = value;
                 break;
@@ -43,17 +47,14 @@ export default function () {
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         console.log(project);
-        await ProjectService.create(project);
+        await ProjectService.saveItem(project);
         console.log('commit');   
     }
 
     return (
         <form className="project-edit-form fill col" onSubmit={handleSubmit}>
-            <h1>NEW PROJECT</h1>
+            <h1>PROJECTDETAIL</h1>
             <h2>{project.name}</h2>
-            <label>Name</label>
-            <input name="name" type="text" value={project.name} onChange={handleChange}/>
-
             <label>Preview Image</label>
             <input name="previewImg" type="text" value={project.media.previewImg} onChange={handleChange}/>
 

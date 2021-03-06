@@ -1,12 +1,12 @@
-import react, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import ProjectService from '../../Service/Project';
-import Project from '../../Models/Project';
-import './List.css';
+import ProjectService from '../../service/project';
+import Project from '../../models/project';
+import './list.css';
 
-export default function() {
-    const [projects, setProjects] = useState<any[]>([]);
+export default function ProjectList() {
+    const [projects, setProjects] = useState<Project[]>([]);
     
     useEffect(() => {
         ProjectService.getItems()
