@@ -21,7 +21,7 @@ services:
     volumes:
       - "./service:/app"
     environment:
-      - "ADMIN_APP_ORIGIN=http://jonathanearlio.localhost"
+      - "ADMIN_APP_ORIGIN=http://admin.jonathanearlio.localhost"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.myapi.rule=Host(`api.jonathanearlio.localhost`)"
@@ -34,7 +34,7 @@ services:
       - "./jonathanearl.io:/app"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.jonathanearlio.rule=Host(`jonathanearlio.localhost`)"
+      - "traefik.http.routers.jonathanearlio.rule=Host(`admin.jonathanearlio.localhost`)"
       - "traefik.http.routers.jonathanearlio.entrypoints=web"
     environment:
       - "REACT_APP_API_URL=http://api.jonathanearlio.localhost"

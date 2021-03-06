@@ -9,7 +9,6 @@ export default function SideNav() {
       <ul>
         <li>
           <Link to="/admin/projects">projects</Link>
-          <Link to="/admin/users">users</Link>
           <Link to="/admin/projects/new">new</Link>
           <Link to="/admin/projects">????</Link>
         </li>

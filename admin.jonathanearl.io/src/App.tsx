@@ -10,7 +10,6 @@ import ProjectList from './projects/list/list';
 import ProjectNew from './projects/newform/newform';
 import ProjectEdit from './projects/editform/editform';
 import SideBar from './navigation/sidenav';
-import Home from './home';
 import './App.css';
 
 export default function App(): JSX.Element {
@@ -19,7 +18,6 @@ export default function App(): JSX.Element {
       <div className="fill row">
         <SideBar />
         <main>
-          <Home />
           <Switch>
             <Route exact path="/admin/projects/new">
               <ProjectNew />
