@@ -1,0 +1,12 @@
+.project-edit-form {
+    max-width: 700px;
+}
+
+.project-edit-form label {
+    margin-bottom: .5em;
+}
+
+.project-edit-form input,
+.project-edit-form textarea {
+    margin-bottom: 2em;
+}

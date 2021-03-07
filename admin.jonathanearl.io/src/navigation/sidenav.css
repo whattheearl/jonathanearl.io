@@ -1,0 +1,9 @@
+.side-bar {
+    width: 260px;
+    margin: 24px;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+}
