@@ -1,13 +1,12 @@
 import React from 'react';
-import './App.css';
+import PlaceHolder from './placeholder';
 
-import projectService from './service/project';
-projectService.getItems().then(console.log);
+import './App.css';
 
 export default function App(): JSX.Element {
   return (
     <main>
-      <div>home home on the range</div>      
+      <PlaceHolder />
     </main>
   );
 }
