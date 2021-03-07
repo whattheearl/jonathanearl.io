@@ -1,0 +1,40 @@
+name: Deploy Jonathanearl.io
+on:
+  push:
+    branches:
+    - master
+
+jobs: 
+  deploy:
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+
+    - name: Cache Node.js Modules
+      uses: actions/cache@v2
+      with:
+        # npm cache files are stored in `~/.npm` on Linux/macOS
+        path: ~/.npm
+        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.OS }}-node-
+          ${{ runner.OS }}-
+    - name: Install Dependencies
+      run: |
+        cd client
+        npm ci
+    - name: Build
+      run: |
+        cd jonathanearl.io
+        npm run build
+    - name: Deploy client to jonathanearl.io
+      run: |
+        aws s3 sync ./jonathanearl.io/build s3://jonathanearl.io
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: 'us-west-2'
